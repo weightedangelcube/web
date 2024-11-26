@@ -308,6 +308,13 @@ ul {
 		padding: 6px;
 	}
 }
+
+@media (max-width: 546px) {
+	.header-content {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}
 /* #endregion */
 
 /* #region || Hell */
