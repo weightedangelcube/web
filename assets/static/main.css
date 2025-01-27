@@ -1,19 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 :root {
     --width: 720px;
     --font-main: 'Space Mono', monospace;
     --font-secondary: 'Rubik';
     --font-scale: 1em;
-    --background-color: #27232B;
-    --heading-color: #8B8FFF;
-    --text-color: #8B8FFF;
-    --link-color: #8B8FFF;
-    --visited-color: #8B8FFF;
-    --code-background-color: #6b70bc;
-    --code-color: #27232B;
-    --blockquote-color: #222;
+    --background-color: rgb(42, 42, 42);
+    --heading-color: rgb(144, 157, 204);
+    --text-color: rgb(144, 157, 204);
+    --footer-color: rgb(138, 148, 182);
+    --link-color: rgb(144, 157, 204);
+    --visited-color: rgb(144, 157, 204);
+    --code-background-color: rgb(107, 112, 188);
+    --code-color: rgb(42, 42, 42);
+    --blockquote-color: rgb(71, 71, 71);
 }
 
 body {
@@ -110,7 +108,7 @@ blockquote {
 footer {
     padding: 25px 0;
     text-align: center;
-    opacity: 0.6;
+    color: var(--footer-color);
 }
 
 #hidden-child {
@@ -158,13 +156,23 @@ ul {
 	list-style-type: "– ";
 }
 
-.project-heading h4 {
-	display: inline;
+.inline-heading {
+    display: inline;
 }
 
-.project-heading sub {
-	display: inline;
-	vertical-align: baseline;
+.inline-contents {
+    display: inline;
+    vertical-align: baseline;
+}
+
+.inline-contents::after {
+    content: "\a";
+    white-space: pre;
+}
+
+#emote {
+    height: 2rem;
+    vertical-align: text-bottom;
 }
 
 /* blog post list */
