@@ -175,6 +175,16 @@ ul {
     vertical-align: text-bottom;
 }
 
+svg#icon {
+    height: 1.5em;
+    vertical-align: text-bottom;
+}
+
+
+svg {
+    color: var(--text-color);
+}
+
 /* blog post list */
 ul.blog-posts {
     list-style-type: none;

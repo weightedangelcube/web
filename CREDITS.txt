@@ -1,0 +1,17 @@
+Sleeping Drilbur favicon by baronessfaron, licensed under CC BY-NC-4.0, from PMD SpriteCollab
+(https://creativecommons.org/licenses/by-nc/4.0/ @ https://github.com/PMDCollab/SpriteCollab/)
+
+.NET logo by .NET authors, licensed under CC0 1.0, from .NET Brand GitHub Repository
+(https://creativecommons.org/publicdomain/zero/1.0/ @ https://github.com/dotnet/brand/)
+
+Godot Engine logo by Andrea Calabró, licensed under CC BY-4.0, from Godot Engine
+(https://creativecommons.org/licenses/by/4.0/ @ https://godotengine.org/press/)
+
+NuGet logo by NuGet contributors, licensed under CC BY-2.0, from NuGet Media GitHub Repository
+(https://creativecommons.org/licenses/by/2.0/ @ https://github.com/NuGet/Media)
+
+Java logo by Jesse Weed and contributors, licensed under the MIT License, from Seti UI
+(https://github.com/jesseweed/seti-ui/)
+
+Gradle, Develocity, the Gradlephant logo and the trademarks displayed on this page (the "Gradle Marks") are registered trademarks of Gradle, Inc. and/or its subsidiaries.
+(https://gradle.com/brand/)
