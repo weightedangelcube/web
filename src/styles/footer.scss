@@ -1,0 +1,7 @@
+@use "./_var.scss";
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+    color: var(--footer-color);
+}

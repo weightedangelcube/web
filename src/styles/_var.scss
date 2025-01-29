@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --width: 720px;
+    --font-main: 'Space Mono', monospace;
+    --font-secondary: 'Rubik';
+    --font-scale: 1em;
+    --background-color: rgb(42, 42, 42);
+    --heading-color: rgb(144, 157, 204);
+    --text-color: rgb(144, 157, 204);
+    --footer-color: rgb(138, 148, 182);
+    --link-color: rgb(144, 157, 204);
+    --visited-color: rgb(144, 157, 204);
+    --code-background-color: rgb(107, 112, 188);
+    --code-color: rgb(42, 42, 42);
+    --blockquote-color: rgb(71, 71, 71);
+}
