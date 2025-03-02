@@ -1,7 +1,7 @@
 
 
 async function fetchCarbon() : Promise<number> {
-    const url : string = "https://api.websitecarbon.com/site?url=" + window.location.hostname;
+    const url : string = "https://corsproxy.io/?https://api.websitecarbon.com/site?url=" + window.location.hostname;
     const response : Response = await fetch(url, {
         method: "GET"
     });
