@@ -10,8 +10,8 @@ Godot Engine logo by Andrea Calabró, licensed under CC BY-4.0, from Godot Engin
 NuGet logo by NuGet contributors, licensed under CC BY-2.0, from NuGet Media GitHub Repository
 (https://creativecommons.org/licenses/by/2.0/ @ https://github.com/NuGet/Media)
 
-Java logo by Jesse Weed and contributors, licensed under the MIT License, from Seti UI
-(https://github.com/jesseweed/seti-ui/)
+Java logo by Papirus Development Team, licensed under GNU GPL v3, from Papirus Icon Theme
+(https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/)
 
 Gradle, Develocity, the Gradlephant logo and the trademarks displayed on this page (the "Gradle Marks") are registered trademarks of Gradle, Inc. and/or its subsidiaries.
 (https://gradle.com/brand/)
