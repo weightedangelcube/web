@@ -1,0 +1,23 @@
+@use "./_var.scss";
+
+ul.blog-posts {
+  list-style-type: none;
+  padding: unset;
+}
+
+ul.blog-posts li {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+ul.blog-posts li time {
+  font-style: normal;
+}
+
+ul.blog-posts li span {
+  flex: 0 0 130px;
+}
+
+ul.blog-posts li a:visited {
+  color: var(--visited-color);
+}
