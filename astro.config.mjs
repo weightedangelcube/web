@@ -3,5 +3,10 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://angelcube.dev"
+  site: "https://angelcube.dev",
+
+  redirects: {
+      '/projects.html': '/projects',
+      '/contact.html': '/contact'
+	},
 });
