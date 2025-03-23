@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/layout.astro";
+import "../styles/main.scss";
+import "../styles/journal.scss"
+import type {MarkdownInstance} from "astro";
+
+interface Post {
+    url: string;
+    title: string;
+    author: string;
+    id: string;
+    date: Date;
+}
+
+const posts = Object.values(import.meta.glob<Post>('./journal/*.mdx', { eager: true }));
+let empty = posts === undefined || posts.length === 0;
+---
+
+<Layout>
+    <h2>journal</h2>
+    <ul class="journal-posts">
+        {!empty && posts.map(post =>
+            <li>
+                <span>
+                    <time datetime={post.date.toISOString()}>{post.date.toDateString()}</time>
+                </span>
+                <a href={post.url}>#{post.id.toString().padStart(3, "0")}: {post.title}</a>
+            </li>
+        )}
+        {empty && <p>no posts yet</p>}
+    </ul>
+</Layout>
