@@ -116,3 +116,15 @@ ul.projects {
 ul.projects li {
 	margin-bottom: 20px;
 }
+
+// button
+img.button {
+    color: transparent;
+    image-rendering: pixelated;
+    width: 88px;
+    height: 31px;
+}
+
+a:has(.button) {
+    text-decoration-line: none;
+}
