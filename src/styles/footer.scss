@@ -9,3 +9,9 @@ footer {
 footer a {
     color: var(--footer-color);
 }
+
+svg#icon {
+    color: var(--text-color);
+    height: 1.5em;
+    vertical-align: text-bottom;
+}
