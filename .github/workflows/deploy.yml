@@ -17,6 +17,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      LASTFM_KEY: ${{ secrets.LASTFM_KEY }}
     steps:
       - name: checkout
         uses: actions/checkout@v4

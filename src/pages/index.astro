@@ -1,6 +1,12 @@
 ---
 import Layout from "../layouts/layout.astro";
 import "../styles/main.scss";
+
+const request = await fetch("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=angelcube__&api_key=" + import.meta.env.LASTFM_KEY + "&limit=1&format=json");
+const response = await request.json().then(data => data.recenttracks.track[0]);
+const artist = response.artist["#text"];
+const name = response.name;
+const album = response.album["#text"];
 ---
 
 <Layout>
@@ -16,6 +22,9 @@ import "../styles/main.scss";
 	<p>
 		beyond coding, I love to sing, do a little drawing, and obsess over video games—currently, I'm plagued by my love of <a href="https://www.celestegame.com/"><b>Celeste</b></a>.
 	</p>
+	<small>
+		<i>last played song: {name} by {artist} on {album}</i>
+	</small>
 </Layout>
 
 
