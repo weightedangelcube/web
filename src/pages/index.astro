@@ -3,10 +3,10 @@ import Layout from "../layouts/layout.astro";
 import "../styles/main.scss";
 
 const request = await fetch("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=angelcube__&api_key=" + import.meta.env.LASTFM_KEY + "&limit=1&format=json");
-const response = await request.json().then(data => data.recenttracks.track[0]);
-const artist = response.artist["#text"];
-const name = response.name;
-const album = response.album["#text"];
+const response = await request.json().then(data => data.recenttracks?.track[0]);
+const artist = response?.artist["#text"];
+const name = response?.name;
+const album = response?.album["#text"];
 ---
 
 <Layout>
