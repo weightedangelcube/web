@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # vscode setting folder
 .vscode/
+
+# angel's test journal file
+src/pages/journal/test.mdx

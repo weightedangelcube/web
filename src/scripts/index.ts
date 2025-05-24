@@ -6,11 +6,11 @@ async function fetchCarbon() : Promise<number> {
     return await response.json().then(data => data.statistics.co2.grid.litres);
 }
 
-window.onload = async function() {
+/* window.onload = async function() {
     try {
         document.getElementById('carbon').innerHTML = "your visit to this website produced only " + Math.round(await fetchCarbon() * 100000) / 100  + " mL of carbon dioxide!";
     } catch (error) {
         document.getElementById('carbon').innerHTML = "unable to load carbon usage!";
         console.log(error);
     }
-};
+}; */
