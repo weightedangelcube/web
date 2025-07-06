@@ -1,7 +1,7 @@
 window.onload = async function() {
     let tunesList = document.getElementById('tunes-list');
     let innerHTML = '';
-    let musicResponse = (await fetch("https://corsproxy.io/?url=https://backend.angelcube.dev/music"))
+    let musicResponse = (await fetch("https://backend.angelcube.dev/music"))
         .json()
         .then(data => data.recenttracks.track.forEach(track => {
             innerHTML +=
