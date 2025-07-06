@@ -1,0 +1,33 @@
+@use "./_var.scss";
+
+ul#tunes-list {
+    list-style-type: none;
+    padding: 0px;
+}
+
+li.tunes-item {
+    display: flex;
+    gap: 8px;
+    padding: 8px 0px;
+}
+
+div.tunes-item-meta {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+div.tunes-item-meta h4 {
+    margin: 0;
+    text-overflow: ellipsis;
+}
+
+div.tunes-item-meta p {
+    margin: 0;
+    text-overflow: ellipsis;
+}
+
+li.tunes-item img {
+    align-self: center;
+    height: fit-content;
+}
