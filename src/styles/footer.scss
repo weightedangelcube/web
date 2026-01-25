@@ -6,12 +6,9 @@ footer {
     color: var(--footer-color);
 }
 
-footer a {
+footer > a {
     color: var(--footer-color);
+    font-family: 'Symbols Nerd Font Mono';
+    font-size: 1.6rem;
 }
 
-svg#icon {
-    color: var(--text-color);
-    height: 1.5em;
-    vertical-align: text-bottom;
-}

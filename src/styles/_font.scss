@@ -1,0 +1,51 @@
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/font/inter/inter-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/font/inter/inter-variable-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Red Hat Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/font/red-hat-mono/red-hat-mono-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Red Hat Mono';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/font/red-hat-mono/red-hat-mono-variable-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Symbols Nerd Font Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/font/symbols-nerd-font/symbols-nerd-font-mono-regular.ttf") format("truetype");
+}
+
+:root {
+    font-family: "Inter", sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1, 'cv11' 1;
+}
+
+@supports (font-variation-settings: normal) {
+    :root { 
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto; 
+    }
+}

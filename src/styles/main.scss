@@ -25,6 +25,11 @@ h6 {
     color: var(--heading-color);
 }
 
+p.heading {
+    font-family: var(--font-main);
+    font-size: 1.4em;
+}
+
 h4 {
     font-size: 14px;
 }
@@ -40,10 +45,10 @@ a:hover {
 }
 
 main {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
     padding: 30px;
-    border: 1px solid var(--link-color);
+    border: 1px solid var(--border-color);
 	line-height: 1.6;
 }
 
@@ -80,6 +85,60 @@ ul {
 
 svg {
     color: var(--link-color);
+}
+
+.codeblock {
+    // font-family: ;
+    padding: 12px;
+    background-color: var(--code-background-color) !important;
+    color: var(--code-color) !important;
+    border-radius: 3px;
+}
+
+.alt-text { 
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+    clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
+    clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
+    white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
+.reduced-motion-notify {
+    font-size: 0.8rem;
+    font-family: var(--font-main);
+    margin-bottom: 0;
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cursor-blink {
+        animation: none !important;
+    }
+
+    .button#catppuccin, .button#miku, .button#radicaldreamland {
+        opacity: 0;
+    }
+
+    .reduced-motion-notify {
+        display: block;
+    }
+}
+
+.cursor-blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+      0% { opacity: 1; }
+     49% { opacity: 1; }
+     50% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 // inlines
