@@ -1,22 +1,21 @@
 ---
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faTumblr, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import "../styles/footer.scss";
+
 ---
 
 <footer>
 	<a href="https://github.com/weightedangelcube" style="text-decoration: none;">
-		
-	</a>
-
-	<a href="https://bsky.app/profile/angelcube.dev" style="text-decoration: none;">
-		
+		<FontAwesomeIcon icon={faGithub} />
 	</a>
 
 	<a href="https://insidethecube.tumblr.com/" style="text-decoration: none;">
-		
+		<FontAwesomeIcon icon={faTumblr} />
 	</a>
 
 	<a href="https://www.youtube.com/@weightedangelcube" style="text-decoration: none;">
-		
+		<FontAwesomeIcon icon={faYoutube} />
 	</a>
 
 	<p>Angel Wang &copy 2026 (<a href="/CREDITS.txt">Credits</a>)</p>

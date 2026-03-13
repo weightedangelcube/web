@@ -11,6 +11,10 @@
   "dependencies": {
     "@astrojs/mdx": "^4.2.1",
     "@astrojs/react": "^5.0.0",
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.2.0",
     "@primer/octicons-react": "^19.22.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

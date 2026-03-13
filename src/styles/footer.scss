@@ -7,8 +7,12 @@ footer {
 }
 
 footer > a {
-    color: var(--footer-color);
-    font-family: 'Symbols Nerd Font Mono';
     font-size: 1.6rem;
+}
+
+footer svg {
+    color: var(--footer-color);
+    width: 24px;
+    height: 24px;
 }
 
