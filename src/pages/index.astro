@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/layout.astro";
 import "../styles/main.scss";
+import {SparkleFillIcon} from '@primer/octicons-react'
 ---
 
 <Layout>
 	<span class="alt-text">Below is the depiction of a terminal with a blinking cursor, with the word "hi" displayed.</span>
 	<div class="codeblock">
-		<p class="heading"><b>>  /home/angelcube</b>  hi <span class="cursor-blink">_</span></p>
+		<p class="heading"><b>> {<SparkleFillIcon size="1em"/>} /home/angelcube</b>  hi <span class="cursor-blink">_</span></p>
 	</div>
 	
 	<p>

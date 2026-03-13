@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 
 import mdx from '@astrojs/mdx';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://angelcube.dev",
@@ -10,7 +12,7 @@ export default defineConfig({
   redirects: {
       '/projects.html': '/projects',
       '/contact.html': '/contact'
-	},
+    },
 
-  integrations: [mdx()]
+  integrations: [mdx(), react()]
 });
