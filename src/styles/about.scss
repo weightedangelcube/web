@@ -1,0 +1,69 @@
+@use "./var";
+
+header a:nth-child(2) {
+    background-color: var(--heading-color);
+    color: var(--background-color);
+}
+
+p.big {
+    font-size: 1.4em;
+}
+
+p.big:first-child {
+    margin-top: 0;
+}
+
+a.big {
+    font-family: var(--font-main);
+    display: block;
+    font-size: 1.4em;
+    text-decoration: none;
+}
+
+a.big:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+a.big::after{
+    content: " ↗"
+}
+
+.columns {
+    display: flex;
+}
+
+.column.left {
+    margin-right: 10%;
+    flex: auto;
+}
+
+.column.right {
+    width: calc(100% / 3);
+    flex: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .column.right a.big::after {
+        content: ""
+    }
+}
+
+@media only screen and (max-width: 786px) {
+    .columns {
+        flex-direction: column-reverse;
+    }
+
+    .column.left {
+        margin-right: 0;
+    }
+
+    .column.right {
+        // border-bottom: 2px solid var(--text-color);
+        width: auto;
+    }
+
+    .column {
+        padding: 20px 0;
+    }
+}

@@ -3,14 +3,14 @@
 :root {
     color-scheme: light dark;
     
-    --width: 720px;
-    --font-main: 'Red Hat Mono', monospace;
-    --font-secondary: 'Inter';
+    --width: 1125px;
+    --font-main: 'PP Neue Machina Inktrap';
+    --font-secondary: 'Inter Variable';
     --font-scale: 1em;
     --background-color: light-dark(#eff1f5, #171717);
     --title-color: light-dark(#242424, #dcdcdc);
     --heading-color: light-dark(#242424, #dcdcdc);
-    --text-color: light-dark(#525252, #aeaeae);
+    --text-color: light-dark(#242424, #dcdcdc);
     --footer-color: light-dark(#525252, #aeaeae);
     --border-color: light-dark(#6b6b6b, #959595);
     --link-color: light-dark(#242424, #dcdcdc);
@@ -18,4 +18,44 @@
     --code-background-color: light-dark(#e1e4ea, #303030);
     --code-color: light-dark(#000, #fff);
     --blockquote-color: light-dark(#cfcfcf, #303030);
+}
+
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    max-width: var(--width);
+    padding: 20px;
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+    font-family: var(--font-main);
+    color: var(--heading-color);
+}
+
+a {
+    color: var(--link-color);
+}
+
+main {
+    margin-bottom: 100px;
+	line-height: 1.6;
+}
+
+@media only screen and (max-width:767px) {
+    main {
+        margin-bottom: 80px;
+    }
 }

@@ -1,9 +1,17 @@
 ---
-import "../styles/header.scss";
+import "../styles/nav.scss"
+import {SparkleFillIcon} from '@primer/octicons-react'
+const { title } = Astro.props
 ---
-
 <header>
-	<a class="title" href="/">
-		<h1>angelcube</h1>
-	</a>
+    <div class="title">
+        <h1>{title}</h1>
+    </div>
+    <nav>
+        <a href="/">
+            <SparkleFillIcon size={32} className="header-icon"/>
+        </a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+    </nav>
 </header>
