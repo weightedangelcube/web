@@ -25,21 +25,31 @@ a.big:hover {
     text-decoration-thickness: 2px;
 }
 
+a.big::after{
+    content: " ↗"
+}
+
 .columns {
     display: flex;
 }
 
 .column.left {
-    margin-right: 5em;
+    margin-right: 10%;
     flex: auto;
 }
 
 .column.right {
-    width: 40%;
+    width: calc(100% / 3);
     flex: none;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width: 1200px) {
+    .column.right a.big::after {
+        content: ""
+    }
+}
+
+@media only screen and (max-width: 786px) {
     .columns {
         flex-direction: column-reverse;
     }
