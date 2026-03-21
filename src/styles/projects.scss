@@ -1,0 +1,6 @@
+@use "./var";
+
+header a:nth-child(3) {
+    background-color: var(--heading-color);
+    color: var(--background-color);
+}

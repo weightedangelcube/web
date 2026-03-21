@@ -1,0 +1,53 @@
+header {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+header .title {
+    margin-top: 30vh;
+    width: 100%;
+    flex: auto;
+}
+
+header .title h1 {
+    margin: 0;
+}
+
+header nav {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    margin-top: 30vh;
+
+    a {
+        width: fit-content;
+        font-family: var(--font-main);
+        font-size: 1.8rem;
+        font-weight: 425;
+        text-decoration: none;
+
+        .header-icon:hover {
+            box-shadow: inset 0 -1px 0 0 currentColor;
+        }
+    }
+
+    a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    header {
+        flex-direction: column;
+        height: auto;
+
+        .title, nav {
+            margin-top: 10vh;
+        }
+        
+        margin-bottom: 10vh;
+    }
+}

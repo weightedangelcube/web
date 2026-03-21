@@ -1,6 +1,6 @@
 ---
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
+import Header from '../components/header.astro'
+const { title } = Astro.props
 ---
 
 <!doctype html>
@@ -15,24 +15,22 @@ import Footer from "../components/footer.astro";
 
 		<!-- External stuff -->
 		<meta property="og:url" content="https://angelcube.dev/" />
-		<meta property="og:title" content="angelcube" />
-		<meta name="description" content="website of a maker of things." />
-		<meta property="og:description" content="website of a maker of things." />
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="angelcube" />
 		<meta
 			name="google-site-verification"
 			content="mLGkfIju91jXMWCVVf4n8JlIIrkjqHFPU6OWuLZQzTo"
 		/>
-		<link rel="me" href="https://pronouns.page/@angelcube" />
-		
+				
 		<!-- Favicon -->
-		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
 
 		<!-- JavaScript -->
-		<script src="../scripts/index.js" />
+		<!-- <script src="../scripts/index.js" /> -->
 
-		<!-- Schema, remind me to add more to this later -->
+		<!-- Schema -->
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
@@ -44,10 +42,9 @@ import Footer from "../components/footer.astro";
 	</head>
 
 	<body>
-		<Header />
+		<Header title={title}/>
 		<main>
 			<slot />
 		</main>
-		<Footer />
 	</body>
 </html>
