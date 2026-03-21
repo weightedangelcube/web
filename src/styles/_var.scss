@@ -3,7 +3,7 @@
 :root {
     color-scheme: light dark;
     
-    --width: 1080px;
+    --width: 1125px;
     --font-main: 'PP Neue Machina Inktrap';
     --font-secondary: 'Inter Variable';
     --font-scale: 1em;
@@ -50,14 +50,12 @@ a {
 }
 
 main {
-    margin-top: 20px;
     margin-bottom: 100px;
 	line-height: 1.6;
 }
 
 @media only screen and (max-width:767px) {
     main {
-        margin-top: 30px;
         margin-bottom: 80px;
     }
 }

@@ -15,7 +15,7 @@ header .title h1 {
 }
 
 header nav {
-    width: 40%;
+    width: calc(100% / 3);
     display: flex;
     flex-direction: column;
     flex: none;
@@ -25,7 +25,6 @@ header nav {
         width: fit-content;
         font-family: var(--font-main);
         font-size: 1.8rem;
-        font-weight: 425;
         text-decoration: none;
 
         .header-icon:hover {
@@ -39,7 +38,7 @@ header nav {
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 786px) {
     header {
         flex-direction: column;
         height: auto;

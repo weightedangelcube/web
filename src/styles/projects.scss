@@ -4,3 +4,41 @@ header a:nth-child(3) {
     background-color: var(--heading-color);
     color: var(--background-color);
 }
+
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.projects-container div {
+    margin-right: 10%;
+}
+
+.projects-container div:last-child {
+    margin-right: 0; // commits a design crime :)
+}
+
+.projects-container a:has(h3) {
+    text-decoration: none;
+}
+
+.projects-container a:has(h3):hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+main h2 {
+    margin-bottom: 0.5em
+}
+
+.projects-container {
+    div {
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+        p {
+            margin-top: 0;
+        }
+    }
+} 

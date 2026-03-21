@@ -1,7 +1,36 @@
 ---
-import Layout from "../layouts/layout.astro";
-import "../styles/projects.scss";
+import Layout from "../layouts/layout.astro"
+import Entry from "../components/entry.astro"
+import "../styles/projects.scss"
 ---
 
-<Layout title="Things I've done">
+<Layout title="Things I've created">
+    <h2>What I'm working on</h2>
+    <div class="projects-container">
+        <Entry title="cc" 
+               description="A mysterious game by mysterious individuals..." 
+               href="https://github.com/csomethingcollab/cc" />
+        <Entry title="everest: fmod2" 
+               description="A project to merge FMOD 2 support into Celeste mod loader Everest." />
+        <Entry title="on-together discord rpc" 
+               description="A Discord Rich Presence mod for game On-Together." 
+               href="https://github.com/weightedangelcube/ot-discordrpc"/>
+    </div>
+    <hr>
+    <h2>Things I've made</h2>
+    <div class="projects-container">
+        <Entry title="slime origin" 
+               description="An addon for the Minecraft mod Origins that adds a Slime origin."
+               href="https://github.com/weightedangelcube/slime-origin" />
+        <Entry title="pomme" 
+               description="A browser startpage with big, easy-click buttons." 
+               href="https://github.com/weightedangelcube/pomme-page/" />
+    </div>
+    <hr>
+    <h2>Cool open-source contributions</h2>
+    <div class="projects-container">
+        <Entry title="web-scrobbler: chillhop radio" 
+               description="Adds support for Chillhop Radio to Web Scrobbler."
+               href="https://github.com/web-scrobbler/web-scrobbler/pull/5813" />
+    </div>
 </Layout>
