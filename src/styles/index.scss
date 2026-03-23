@@ -45,9 +45,6 @@ p.big {
             width: auto;
         }
     }
-
-
-
 }
 
 #now-playing {
@@ -55,7 +52,11 @@ p.big {
     // flex-direction: row;
     p {
         font-family: var(--font-main);
-        font-size: 1.4rem
+        font-size: 1.4rem;
+
+        span:first-child {
+            display: block;
+        }
     }
 
     b {
