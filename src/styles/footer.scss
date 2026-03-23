@@ -1,0 +1,31 @@
+footer {
+    // padding: 0 20px;
+    // padding: 0 calc((100vw - var(--width)) / 2);
+    overflow: hidden;
+
+    hr {
+        margin: 20px;
+    }
+
+    .footer-caption {
+        max-width: var(--width);
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 2em;
+        margin-bottom: 3em;
+
+        span {
+            font-family: var(--font-main);
+            font-size: 1.25rem;
+        }
+    }
+
+    img {
+        margin-top: -6.66%;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: calc(100% - 40px);
+        transform: translateY(33%);
+    }
+}

@@ -1,0 +1,17 @@
+---
+import "../styles/footer.scss"
+import {SparkleFillIcon} from '@primer/octicons-react'
+import {Temporal} from 'temporal-polyfill'
+
+---
+
+<footer>
+    <hr>
+    <div class="footer-caption">
+        <SparkleFillIcon size={20} className="logo"/>
+        <span>&copy; {Temporal.Now.plainDateISO().year} Angel Wang</span>
+        <span>Computer [for] human.</span>
+    </div>
+    <img src="/logotype.svg" />
+
+</footer>
