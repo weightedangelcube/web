@@ -105,7 +105,7 @@ export default function NowPlaying() {
                 <p>
                     <span>Currently listening to </span>
                     <img src={data.coverArtURL} />
-                    <span> {data.name} by {data.artist} on {data.album}. </span>
+                    <span> <b>{data.name}</b> by <b>{data.artist}</b> on <b>{data.album}</b>. </span>
                     <a href={data.url} target="_blank">↗</a>
                 </p>
             </div>
