@@ -28,6 +28,28 @@ p.big {
     }
 }
 
+@media only screen and (max-width: 786px) {
+    .columns {
+        flex-direction: column;
+
+        .column {
+            padding: 20px 0;
+        }
+
+        .column.left {
+            margin-right: 0;
+        }
+
+        .column.right {
+            // border-bottom: 2px solid var(--text-color);
+            width: auto;
+        }
+    }
+
+
+
+}
+
 #now-playing {
     // display: flex;
     // flex-direction: row;

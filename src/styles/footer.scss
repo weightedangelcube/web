@@ -1,6 +1,4 @@
 footer {
-    // padding: 0 20px;
-    // padding: 0 calc((100vw - var(--width)) / 2);
     overflow: hidden;
 
     hr {
@@ -21,11 +19,25 @@ footer {
         }
     }
 
+    @media only screen and (max-width: 786px) {
+        .footer-caption {
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5em;
+
+            span {
+                font-size: 1rem;
+                text-align: end;
+            }
+
+            span:last-child {
+                grid-area: 2 / 2;
+            }
+        }
+    }
+
     img {
         margin-top: -6.66%;
-        margin-left: 20px;
-        margin-right: 20px;
-        width: calc(100% - 40px);
+        width: 100%;
         transform: translateY(33%);
     }
 }

@@ -18,10 +18,16 @@
     --code-background-color: light-dark(#e1e4ea, #303030);
     --code-color: light-dark(#000, #fff);
     --blockquote-color: light-dark(#cfcfcf, #303030);
+
+    ::selection {
+        background-color: light-dark(#242424, #dcdcdc);
+        color: light-dark(#eff1f5, #171717);
+    }
 }
 
 body {
     margin: 0;
+    padding: 0 20px;
     font-family: var(--font-secondary);
     font-size: var(--font-scale);
     text-align: left;

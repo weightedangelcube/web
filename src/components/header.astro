@@ -1,5 +1,5 @@
 ---
-import "../styles/nav.scss"
+import "../styles/header.scss"
 import {SparkleFillIcon} from '@primer/octicons-react'
 const { title } = Astro.props
 ---
@@ -8,7 +8,7 @@ const { title } = Astro.props
         <h1>{title}</h1>
     </div>
     <nav>
-        <a href="/">
+        <a href="/" aria-label="Home">
             <SparkleFillIcon size={32} className="header-icon"/>
         </a>
         <a href="/about">About</a>
