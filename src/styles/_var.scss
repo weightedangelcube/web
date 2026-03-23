@@ -4,7 +4,7 @@
     color-scheme: light dark;
     
     --width: 1125px;
-    --font-main: 'PP Neue Machina Inktrap';
+    --font-main: 'PP Neue Machina Inktrap Variable';
     --font-secondary: 'Inter Variable';
     --font-scale: 1em;
     --background-color: light-dark(#eff1f5, #171717);
@@ -21,11 +21,9 @@
 }
 
 body {
+    margin: 0;
     font-family: var(--font-secondary);
     font-size: var(--font-scale);
-    margin: auto;
-    max-width: var(--width);
-    padding: 20px;
     text-align: left;
     background-color: var(--background-color);
     word-wrap: break-word;
@@ -50,7 +48,9 @@ a {
 }
 
 main {
-    margin-bottom: 100px;
+    margin: auto;
+    max-width: var(--width);
+    margin-bottom: 20vh;
 	line-height: 1.6;
 }
 

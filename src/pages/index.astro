@@ -1,8 +1,19 @@
 ---
 import Layout from "../layouts/layout.astro";
 import "../styles/main.scss";
+import NowPlaying from "../scripts/NowPlaying";
+import LocalTime from "../scripts/LocalTime";
 ---
-
 <Layout title="Hi, I'm angelcube">
-
+    <div class="columns">
+        <div class="column left">
+            <p class="big">
+                I'm a computer human living in Alberta, Canada. I write code and music to stop myself from going insane.
+            </p>
+        </div>
+        <div class="column right">
+            <LocalTime client:only="react"/>
+            <NowPlaying client:only="react" />
+        </div>
+    </div>
 </Layout>

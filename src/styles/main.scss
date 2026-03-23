@@ -7,28 +7,57 @@ header a:nth-child(1) {
 
 p.big {
     font-family: var(--font-secondary);
-    font-size: 1.4em;
+    font-size: 1.5rem;
 }
 
-h4 {
-    font-size: 14px;
+.columns {
+    display: flex;
+    
+    .column.left {
+        margin-right: 10%;
+        flex: auto;
+    }
+
+    .column.right {
+        width: calc(100% / 3);
+        flex: none;
+
+        p.local-time {
+            font-size: 1.5rem
+        }
+    }
 }
 
-strong,
-b {
-    color: var(--heading-color);
+#now-playing {
+    // display: flex;
+    // flex-direction: row;
+    p {
+        font-family: var(--font-main);
+        font-size: 1.5rem
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+    }
+
+    img {
+        vertical-align: baseline;
+        display: inline;
+        width: 0.72em;
+    }
+
+    .metadata {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
 
-hr {
-    border: 0;
-    border-top: 1px dashed;
-	color: var(--text-color)
-}
 
-img {
-    max-width: 100%;
-}
 
-ul {
-	list-style-type: "– ";
-}
+
