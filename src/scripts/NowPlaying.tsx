@@ -4,8 +4,8 @@ interface TrackData {
     name: string;
     album: string;
     artist: string;
-    url: string;
-    coverArtURL: string;
+    URL: string;
+    coverArtURL?: string;
 }
 
 async function fetchTrackData() {
@@ -13,8 +13,7 @@ async function fetchTrackData() {
         name: "Unknown",
         album: "Unknown",
         artist: "Unknown",
-        url: "",
-        coverArtURL: "/no-cover-art.svg"
+        URL: "",
     }
 
     const listenResponse = await fetch("https://api.listenbrainz.org/1/user/angelcube/playing-now")
@@ -29,7 +28,7 @@ async function fetchTrackData() {
     trackData.album = rawListenData.release_name
 
     // this needs to be encoded separately—URLSearchParams encodes spaces as "+"
-    let query = encodeURIComponent(`artist:"${rawListenData.artist_name}" AND recording:"${rawListenData.track_name}" ${rawListenData.release_name == undefined ? "" : `AND release:"${rawListenData.release_name}"`}`)
+    let query = encodeURIComponent(`artist:"${rawListenData.artist_name}" AND recording:"${rawListenData.track_name}" ${!rawListenData.release_name ? "" : `AND release:"${rawListenData.release_name}"`}`)
 
     const metadataLookupParams = new URLSearchParams({
         fmt: "json",
@@ -47,7 +46,7 @@ async function fetchTrackData() {
     const metadataLookup = metadataLookupJSON.recordings[0]
 
     trackData.name = metadataLookup.title
-    trackData.url = "https://listenbrainz.org/track/" + metadataLookup.id
+    trackData.URL = "https://listenbrainz.org/track/" + metadataLookup.id
 
     trackData.artist = "" // reset this, we set it to Unknown before
     metadataLookup["artist-credit"].forEach((artistCredit) => {
@@ -104,9 +103,13 @@ export default function NowPlaying() {
             <div id="now-playing">
                 <p>
                     <span>Currently listening to </span>
-                    <img src={data.coverArtURL} />
+                    {
+                        URL
+                        ? <img src={data.coverArtURL} />
+                        : ""
+                    }
                     <span> <b>{data.name}</b> by <b>{data.artist}</b> on <b>{data.album}</b>. </span>
-                    <a href={data.url} target="_blank">↗</a>
+                    <a href={data.URL} target="_blank">↗</a>
                 </p>
             </div>
         )
