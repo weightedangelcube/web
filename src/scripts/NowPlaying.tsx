@@ -55,13 +55,13 @@ async function fetchTrackData() {
     });
 
     // preemptively set this to the first release found
-    trackData.album = metadataLookup.releases[0].title
+    trackData.album = metadataLookup.releases[0]["release-group"].title
     let releaseGroupMBID = metadataLookup.releases[0]["release-group"].id
 
     // then do a lookup
     metadataLookup.releases.forEach(release => {
         if (rawListenData.release_name == release.title) {
-            trackData.album = release.title
+            trackData.album = release["release-group"].title
             releaseGroupMBID = release["release-group"].id
         }
     });
