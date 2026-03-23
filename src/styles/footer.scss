@@ -1,18 +1,43 @@
-@use "./_var.scss";
-
 footer {
-    padding: 25px 0;
-    text-align: center;
-    color: var(--footer-color);
-}
+    overflow: hidden;
 
-footer > a {
-    font-size: 1.6rem;
-}
+    hr {
+        margin: 20px;
+    }
 
-footer svg {
-    color: var(--footer-color);
-    width: 24px;
-    height: 24px;
-}
+    .footer-caption {
+        max-width: var(--width);
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 2em;
+        margin-bottom: 3em;
 
+        span {
+            font-family: var(--font-main);
+            font-size: 1.25rem;
+        }
+    }
+
+    @media only screen and (max-width: 786px) {
+        .footer-caption {
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5em;
+
+            span {
+                font-size: 1rem;
+                text-align: end;
+            }
+
+            span:last-child {
+                grid-area: 2 / 2;
+            }
+        }
+    }
+
+    img {
+        margin-top: -6.66%;
+        width: 100%;
+        transform: translateY(33%);
+    }
+}

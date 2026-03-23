@@ -1,53 +1,16 @@
 ---
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
+import Meta from '../layouts/meta.astro'
+import Header from '../components/header.astro'
+import Footer from "../components/footer.astro"
+const { title } = Astro.props
 ---
 
-<!doctype html>
-<html lang="en-CA">
-	<head>
-
-		<!-- Important metadata, and the like -->
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width = device-width, initial-scale = 1" />
-		<meta name="generator" content={Astro.generator} />
-		<title>angelcube</title>
-
-		<!-- External stuff -->
-		<meta property="og:url" content="https://angelcube.dev/" />
-		<meta property="og:title" content="angelcube" />
-		<meta name="description" content="website of a maker of things." />
-		<meta property="og:description" content="website of a maker of things." />
-		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="angelcube" />
-		<meta
-			name="google-site-verification"
-			content="mLGkfIju91jXMWCVVf4n8JlIIrkjqHFPU6OWuLZQzTo"
-		/>
-		<link rel="me" href="https://pronouns.page/@angelcube" />
-		
-		<!-- Favicon -->
-		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-
-		<!-- JavaScript -->
-		<script src="../scripts/index.js" />
-
-		<!-- Schema, remind me to add more to this later -->
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"name": "angelcube",
-				"url": "https://angelcube.dev"
-			}
-		</script>
-	</head>
-
+<Meta>
 	<body>
-		<Header />
 		<main>
+			<Header title={title}/>
 			<slot />
 		</main>
 		<Footer />
 	</body>
-</html>
+<Meta />

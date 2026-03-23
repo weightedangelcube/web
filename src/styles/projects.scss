@@ -1,0 +1,48 @@
+@use "./var";
+
+header a:nth-child(3) {
+    background-color: var(--heading-color);
+    color: var(--background-color);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    div {
+        margin-right: 10%;
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-top: 0;
+        }
+    }
+
+    div:last-child {
+        margin-right: 0; // commits a design crime :)
+        
+    }
+
+    a:has(h3) {
+        text-decoration: none;
+    }
+
+    a:has(h3):hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+    }
+}
+
+main h2 {
+    margin-bottom: 0.5em
+}
+
+@media only screen and (max-width: 786px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}

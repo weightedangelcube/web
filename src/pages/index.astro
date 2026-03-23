@@ -1,54 +1,19 @@
 ---
 import Layout from "../layouts/layout.astro";
-import "../styles/main.scss";
-import {SparkleFillIcon} from '@primer/octicons-react'
+import "../styles/index.scss";
+import NowPlaying from "../scripts/NowPlaying";
+import LocalTime from "../scripts/LocalTime";
 ---
-
-<Layout>
-	<div class="codeblock heading" aria-label='This is the depiction of a terminal with a blinking cursor, with the word "hi" displayed.'>
-		<b>></b> 
-        {<SparkleFillIcon size="1em"/>} 
-        <b>/home/angelcube</b>  
-        <span>hi</span>
-        <span class="cursor-blink">_</span>
-	</div>
-	
-	<p>
-		I'm <b>angelcube</b>, and I write code and music.
-	</p>
-
-
-	<p>
-		if you need to reach me, you can usually find me quickest by emailing <b>angel@angelcube.dev</b>.
-	</p>
-	<p>
-		otherwise, you can find me in most places with the username <b>@angelcube</b>, <b>@weightedangelcube</b>, or some variant of it.
-	</p>
-
-	<p class="reduced-motion-notify">(some buttons hidden due to prefers-reduced-motion)</p>
-	<a href="https://catppuccin.com/">
-        <img class="button" id="catppuccin" loading="lazy" decoding="async" src="/img/buttons/catppuccin.webp" alt="Catppuccin" title="Catppuccin" />
-    </a>
-    <a href="https://xkcd.com">
-        <img class="button" loading="lazy" decoding="async" src="/img/buttons/xkcd.png" alt="xkcd" title="xkcd" />
-    </a>
-    <a href="https://www.thinkwithportals.com/">
-        <img class="button" loading="lazy" decoding="async" src="/img/buttons/portal.jpg" alt="Aperture Labs" title="Portal 2" />
-    </a>
-    <a href="https://en.wikipedia.org/wiki/Hatsune_Miku">
-        <img class="button" id="miku" loading="lazy" decoding="async" src="/img/buttons/miku.gif" alt="this site is Miku Approved" title="Hatsune Miku" />
-    </a>
-    <a href="https://www.mozilla.org/firefox/">
-        <img class="button" loading="lazy" decoding="async" src="/img/buttons/firefox.gif" alt="Firefox" title="Firefox" />
-    </a>
-    <a href="https://kernel.org/">
-        <img class="button" loading="lazy" decoding="async" src="/img/buttons/linux.png" alt="Linux" title="Linux" />
-    </a>
-    <a href="https://blog.radicaldream.land">
-        <img class="button" id="radicaldreamland" loading="lazy" decoding="async" src="/img/buttons/radicaldreamland.gif" alt="Dispatch from the Radical Dreamland" title="Lena Raine" >
-    </a>
-
-	
+<Layout title="Hi, I'm angelcube">
+    <div class="columns">
+        <div class="column left">
+            <p class="big">
+                I'm a computer human living in Alberta, Canada. I write code and music to stop myself from going insane.
+            </p>
+        </div>
+        <div class="column right">
+            <LocalTime client:only="react"/>
+            <NowPlaying client:only="react" />
+        </div>
+    </div>
 </Layout>
-
-
