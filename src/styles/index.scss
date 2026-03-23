@@ -73,6 +73,7 @@ p.big {
     }
 
     img {
+        border: 1px solid var(--text-color);
         vertical-align: baseline;
         display: inline;
         width: 0.72em;
