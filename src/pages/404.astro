@@ -1,21 +1,19 @@
 ---
-import Layout from "../layouts/layout.astro";
-import "../styles/main.scss";
+import Meta from "../layouts/meta.astro";
 import {SparkleFillIcon} from '@primer/octicons-react'
-
+import "../styles/404.scss"
 ---
-<Layout>
-	<div class="codeblock heading" aria-label='This is the depiction of a terminal with a blinking cursor, with the number "404" displayed.'>
-		<b>></b> 
-        {<SparkleFillIcon size="1em"/>} 
-        <b>404</b>
-        <span class="cursor-blink">_</span>
-	</div>
+<Meta>
+    <main>
+        <div class="title">
+            <h1>This is not the page you are looking for.</h1>
+        </div>
+        <div class="return-home">
+            <span>
+                <SparkleFillIcon size={32} className="header-icon"/>
+                <a href="/">Return home?</a>
+            </span>
 
-    <p>
-        This is not the page you are looking for.
-    </p>
-    <a href="/">
-        Return home?
-    </a>
-</Layout>
+        </div>
+    </main>
+</Meta>

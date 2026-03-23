@@ -1,0 +1,58 @@
+@use "./var";
+
+main {
+    display: flex;
+
+    span {
+        width: fit-content;
+        background-color: var(--heading-color);
+        color: var(--background-color);
+    }
+
+    .title {
+        margin-top: 30vh;
+        width: 100%;
+        flex: auto;
+
+        h1 {
+            margin: 0;
+        }
+    }
+
+    .return-home {
+        width: calc(100% / 3);
+        display: flex;
+        flex-direction: column;
+        flex: none;
+        margin-top: 30vh;
+
+        a {
+            font-family: var(--font-main);
+            font-size: 2rem;
+            text-decoration: none;
+            color: var(--background-color);
+        }
+        
+        a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+        }
+    }
+}
+
+@media only screen and (max-width: 786px) {
+    main {
+        flex-direction: column;
+        height: auto;
+
+        .title, .return-home {
+            margin-top: 10vh;
+        }
+
+        .return-home {
+            width: auto;
+        }
+        
+        margin-bottom: 10vh;
+    }
+}
