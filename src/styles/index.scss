@@ -53,10 +53,6 @@ p.big {
     p {
         font-family: var(--font-main);
         font-size: 1.4rem;
-
-        span:first-child {
-            display: block;
-        }
     }
 
     b {
@@ -72,11 +68,8 @@ p.big {
         text-decoration-thickness: 2px;
     }
 
-    img {
-        border: 1px solid var(--text-color);
-        vertical-align: baseline;
-        display: inline;
-        width: 0.72em;
+    .lucide {
+        vertical-align: text-bottom;
     }
 
     .metadata {

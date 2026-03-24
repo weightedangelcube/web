@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+import { AudioWaveform } from 'lucide-react';
 
 interface TrackData {
     name: string;
@@ -102,13 +103,9 @@ export default function NowPlaying() {
         return (
             <div id="now-playing">
                 <p>
-                    <span>Currently listening to </span>
-                    {
-                        URL
-                        ? <img src={data.coverArtURL} />
-                        : ""
-                    }
-                    <span> <b>{data.name}</b> by <b>{data.artist}</b> on <b>{data.album}</b>. </span>
+                    <AudioWaveform width="1em" height="1em" strokeWidth={2.5} />
+                    <span> Currently listening to </span>
+                    <span><b>{data.name}</b> by <b>{data.artist}</b> on <b>{data.album}</b>. </span>
                     <a href={data.URL} target="_blank">↗</a>
                 </p>
             </div>
