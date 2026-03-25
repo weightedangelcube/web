@@ -6,6 +6,7 @@
     --width: 1125px;
     --font-main: 'PP Neue Machina Inktrap Variable';
     --font-secondary: 'Inter Variable';
+    --font-code: 'Red Hat Mono VF';
     --font-scale: 1em;
     --background-color: light-dark(#eff1f5, #171717);
     --title-color: light-dark(#242424, #dcdcdc);
@@ -15,14 +16,9 @@
     --border-color: light-dark(#6b6b6b, #959595);
     --link-color: light-dark(#242424, #dcdcdc);
     --visited-color: light-dark(#242424, #dcdcdc);
-    --code-background-color: light-dark(#e1e4ea, #303030);
+    --code-background-color: light-dark(#dcdfe6, #303030);
     --code-color: light-dark(#000, #fff);
     --blockquote-color: light-dark(#cfcfcf, #303030);
-
-    ::selection {
-        background-color: light-dark(#242424, #dcdcdc);
-        color: light-dark(#eff1f5, #171717);
-    }
 }
 
 body {
@@ -64,4 +60,11 @@ main {
     main {
         margin-bottom: 80px;
     }
+}
+
+code {
+    background-color: var(--code-background-color);
+    border-radius: 0.15em;
+    font-family: 'Red Hat Mono VF';
+    font-size: 1rem;
 }
