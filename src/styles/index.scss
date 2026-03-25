@@ -23,6 +23,7 @@ p.big {
         flex: none;
 
         p.local-time {
+            font-feature-settings: "tnum";
             font-size: 1.5rem
         }
     }
