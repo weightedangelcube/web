@@ -11,7 +11,12 @@
         text {
             font-family: 'PP Neue Machina Inktrap Variable';
             font-size: 24px;
-            fill: light-dark(#242424, #dcdcdc);
+            fill: #242424;
+            
+        }
+
+        @media (prefers-color-scheme: dark) {
+            text { fill: #eff1f5; }
         }
     </style>
     <text x="-1.402" y="20.615" transform="translate(.202 -2.975)">angelcube</text>
