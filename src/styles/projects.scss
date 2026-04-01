@@ -13,6 +13,7 @@ header a:nth-child(3) {
         margin-right: 10%;
 
         h3 {
+            letter-spacing: -0.03em;
             margin-top: 0;
             margin-bottom: 0.5em;
         }
@@ -31,13 +32,14 @@ header a:nth-child(3) {
         text-decoration: none;
     }
 
-    a:has(h3):hover {
+    a[href]:has(h3):hover {
         text-decoration: underline;
         text-decoration-thickness: 2px;
     }
 }
 
 main h2 {
+    letter-spacing: -0.03em;
     margin-bottom: 0.5em
 }
 

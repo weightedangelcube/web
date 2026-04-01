@@ -23,8 +23,12 @@ p.big {
         flex: none;
 
         p.local-time {
-            font-feature-settings: "tnum";
-            font-size: 1.5rem
+            position: relative;
+            bottom: 0.25rem;
+
+            font-feature-settings: "tnum" 1;
+            font-size: 1.4rem;
+            letter-spacing: -0.05em;
         }
     }
 }
@@ -49,11 +53,15 @@ p.big {
 }
 
 #now-playing {
-    // display: flex;
-    // flex-direction: row;
+    i {
+        font-size: 1rem;
+        font-variation-settings: "ital" 100; // because of course it works that way
+    }
+
     p {
         font-family: var(--font-main);
         font-size: 1.4rem;
+        letter-spacing: -0.03em;
     }
 
     b {
