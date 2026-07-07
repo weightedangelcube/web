@@ -21,9 +21,9 @@ jobs:
       LASTFM_KEY: ${{ secrets.LASTFM_KEY }}
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: build astro
-        uses: withastro/action@v3
+        uses: withastro/action@v6
         # with:
           # path: . # The root location of your Astro project inside the repository. (optional)
           # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
