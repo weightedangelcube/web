@@ -1,19 +1,7 @@
 ---
-import Layout from "../layouts/layout.astro";
-import "../styles/index.scss";
-import NowPlaying from "../scripts/NowPlaying";
-import LocalTime from "../scripts/LocalTime";
+import Meta from "../layouts/meta.astro";
 ---
-<Layout title="Hi, I'm angelcube">
-    <div class="columns">
-        <div class="column left">
-            <p class="big">
-                I'm a computer human living in Alberta, Canada. I write code and music to stop myself from going insane.
-            </p>
-        </div>
-        <div class="column right">
-            <LocalTime client:only="react"/>
-            <NowPlaying client:only="react" />
-        </div>
-    </div>
-</Layout>
+<Meta>
+    <p>This site is currently a work in progress. - Angel, Aug 1 2026</p>
+    <p>If it's been a ridiculously long amount of time since the date above, please go bug Angel at <code>angel@angelcube.dev</code>.</p>
+</Meta>

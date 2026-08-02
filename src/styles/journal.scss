@@ -1,0 +1,11 @@
+@use "./var";
+
+body {
+    background-color: var(--background-color);
+    font-family: var(--font-body);
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+}

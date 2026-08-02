@@ -1,0 +1,40 @@
+---
+type PostType = "Album Review" | "Book Review" | "Misc"
+
+type Frontmatter = {
+    title: string,
+    type: PostType,
+    date: string
+}
+
+import Meta from "./meta.astro"
+import "../styles/post.scss"
+import { Temporal } from "temporal-polyfill"
+
+const frontmatter = Astro.props.frontmatter as Frontmatter
+---
+<Meta>
+    <main>
+        <header>
+            <nav>
+                <span class="back">
+                    <a href="/journal">← back to journal</a>
+                </span>
+                <span class="name">angelcube ✦</span>
+            </nav>
+            <div class="title">
+                <div class="heading">
+                    <span class="type">{frontmatter.type}</span>
+                    <h1>{frontmatter.title}</h1>
+                </div>
+                <div class="date-meta">
+                    <span>Written</span>
+                    <span class="date">{Temporal.PlainDate.from(frontmatter.date).toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
+                </div>
+            </div>
+        </header>
+        <article>
+            <slot />
+        </article>
+    </main>
+</Meta>

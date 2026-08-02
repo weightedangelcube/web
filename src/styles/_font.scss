@@ -44,3 +44,11 @@
   // the font to GitHub.
   // also, it's named woff, but it's actually a woff2 for some reason.
 }
+
+@font-face {
+  font-family: 'PP Telegraf Variable';
+  font-style: normal italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://pangrampangram.com/cdn/shop/files/PPTelegraf-Variable.woff2") format("woff2");
+}

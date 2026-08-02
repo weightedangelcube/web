@@ -1,0 +1,13 @@
+---
+import Meta from "../../layouts/meta.astro"
+import "../../styles/journal.scss"
+
+const posts = Object.values(import.meta.glob('./*.mdx', { eager: true }));
+---
+
+<Meta>
+    <main>
+        <h1>journal →</h1>
+        {posts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+    </main>
+</Meta>

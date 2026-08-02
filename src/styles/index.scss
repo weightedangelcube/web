@@ -1,93 +1,9 @@
 @use "./_var.scss";
 
-header a:nth-child(1) {
-    background-color: var(--heading-color);
-    color: var(--background-color);
+p {
+    font-family: var(--font-main)
 }
 
-p.big {
-    font-family: var(--font-secondary);
-    font-size: 1.4rem;
+code {
+    font-family: var(--font-code)
 }
-
-.columns {
-    display: flex;
-    
-    .column.left {
-        margin-right: 10%;
-        flex: auto;
-    }
-
-    .column.right {
-        width: calc(100% / 3);
-        flex: none;
-
-        p.local-time {
-            position: relative;
-            bottom: 0.25rem;
-
-            font-feature-settings: "tnum" 1;
-            font-size: 1.4rem;
-            letter-spacing: -0.075em;
-        }
-    }
-}
-
-@media only screen and (max-width: 786px) {
-    .columns {
-        flex-direction: column;
-
-        .column {
-            padding: 20px 0;
-        }
-
-        .column.left {
-            margin-right: 0;
-        }
-
-        .column.right {
-            // border-bottom: 2px solid var(--text-color);
-            width: auto;
-        }
-    }
-}
-
-#now-playing {
-    i {
-        font-size: 1rem;
-        font-variation-settings: "ital" 100; // because of course it works that way
-    }
-
-    p {
-        font-family: var(--font-main);
-        font-size: 1.4rem;
-        letter-spacing: -0.03em;
-    }
-
-    b {
-        font-weight: 575;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-    }
-
-    .lucide {
-        vertical-align: text-bottom;
-    }
-
-    .metadata {
-        display: flex;
-        flex-direction: column;
-    }
-
-}
-
-
-
-

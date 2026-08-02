@@ -2,67 +2,68 @@
 
 :root {
     color-scheme: light dark;
-    overscroll-behavior: none;
     
     --width: 1125px;
-    --font-main: 'PP Neue Machina Inktrap Variable';
-    --font-secondary: 'Inter Variable';
-    --font-code: 'Red Hat Mono VF';
+    --font-heading: 'PP Neue Machina Inktrap Variable', sans-serif;
+    --font-body: 'PP Telegraf Variable', sans-serif;
+    --font-code: 'IBM Plex Mono', monospace;
     --font-scale: 1em;
-    --background-color: light-dark(#eff1f5, #242424);
-    --title-color: light-dark(#242424, #eff1f5);
-    --heading-color: light-dark(#242424, #eff1f5);
-    --text-color: light-dark(#242424, #eff1f5);
-    --link-color: light-dark(#242424, #eff1f5);
-    --visited-color: light-dark(#242424, #eff1f5);
+    --background-color: light-dark(#faf4ed, #242424);
+    --title-color: light-dark(#242424, #faf4ed);
+    --heading-color: light-dark(#242424, #faf4ed);
+    --text-color: light-dark(#242424, #faf4ed);
+    --link-color: light-dark(#242424, #faf4ed);
+    --visited-color: light-dark(#242424, #faf4ed);
     --code-background-color: light-dark(#dcdfe6, #37393d);
     --blockquote-color: light-dark(#dcdfe6, #37393d);
 }
 
+// every website gotta have one of these
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-    margin: 0;
-    padding: 0 20px;
-    font-family: var(--font-secondary);
-    font-size: var(--font-scale);
-    text-align: left;
-    background-color: var(--background-color);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: var(--text-color);
+	line-height: 1;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: normal;
-    font-family: var(--font-main);
-    color: var(--heading-color);
+ol, ul {
+	list-style: none;
 }
-
-a {
-    color: var(--link-color);
+blockquote, q {
+	quotes: none;
 }
-
-main {
-    margin: auto;
-    max-width: var(--width);
-    margin-bottom: 20vh;
-	line-height: 1.6;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
-
-@media only screen and (max-width:767px) {
-    main {
-        margin-bottom: 80px;
-    }
-}
-
-code {
-    background-color: var(--code-background-color);
-    border-radius: 0.15em;
-    font-family: 'Red Hat Mono VF';
-    font-size: 1rem;
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
