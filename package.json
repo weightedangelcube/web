@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.2",
+    "@astrojs/netlify": "^8.2.3",
     "@astrojs/react": "^5.0.0",
     "@lucide/astro": "^1.28.0",
     "@primer/octicons-react": "^19.22.0",
@@ -24,6 +25,7 @@
     "temporal-polyfill": "^0.3.2"
   },
   "devDependencies": {
+    "netlify-cli": "^27.1.2",
     "sass-embedded": "^1.83.4"
   },
   "allowScripts": {

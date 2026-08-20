@@ -1,0 +1,29 @@
+when:
+	- event: ["push"]
+		branch: ["main"]
+	- event: ["pull_request"]
+		branch: ["main"]
+
+engine: "nixery"
+
+dependencies:
+	nixpkgs:
+		- nodejs_24
+		- npm
+
+steps:
+	- name: "install dependencies"
+		command: npm i
+	- name: "deploy to Netlify"
+		command: |
+			commit_msg=$(git show "$TANGLED_SHA" --pretty=%B -s)
+			maybe_prod_flag=$( [ "$TANGLED_REF_NAME" = "main" ] && echo "--prod" )
+			npx netlify deploy \
+				--site $SITE_ID \
+				--message="${commit_msg:-deploy from Tangled CI}" \
+				$maybe_prod_flag
+		environment:
+			NODE_ENV: "production"
+			SITE_ID: "$NETLIFY_SITE_ID"
+			# Tangled UI renders ANSI colour codes as raw text
+			NO_COLOR: "true"
