@@ -28,3 +28,5 @@ pnpm-debug.log*
 
 # angel's test journal file
 src/pages/journal/test.mdx
+# Local Netlify folder
+.netlify

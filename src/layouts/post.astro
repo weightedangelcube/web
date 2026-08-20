@@ -1,40 +1,62 @@
 ---
-type PostType = "Album Review" | "Book Review" | "Misc"
+type PostType = "Ramblings" | "Writings"
 
 type Frontmatter = {
     title: string,
+    description: string,
     type: PostType,
-    date: string
+    written_date: string,
+    updated_date: string
 }
 
-import Meta from "./meta.astro"
 import "../styles/post.scss"
 import { Temporal } from "temporal-polyfill"
 
 const frontmatter = Astro.props.frontmatter as Frontmatter
 ---
-<Meta>
-    <main>
-        <header>
-            <nav>
-                <span class="back">
-                    <a href="/journal">← back to journal</a>
-                </span>
-                <span class="name">angelcube ✦</span>
-            </nav>
-            <div class="title">
-                <div class="heading">
-                    <span class="type">{frontmatter.type}</span>
-                    <h1>{frontmatter.title}</h1>
+
+<!doctype html>
+<html lang="en-CA">
+	<head>
+		<!-- Important metadata, and the like -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width = device-width, initial-scale = 1" />
+		<title>{frontmatter.title} · a journal by angelcube</title>
+
+        <!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
+	</head>
+
+    <body>
+        <main>
+            <header>
+                <nav>
+                    <span class="back">
+                        <a href="/journal">← back to journal</a>
+                    </span>
+                    <span class="name">angelcube ✦</span>
+                </nav>
+                <div class="title">
+                    <div class="heading">
+                        <span class="type">{frontmatter.type}</span>
+                        <h1>{frontmatter.title}</h1>
+                        <p class="description">{frontmatter.description}</p>
+                    </div>
+                    <div class="written-date-meta">
+                        <span>Written</span>
+                        <span class="date">{Temporal.PlainDate.from(frontmatter.written_date).toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
+                    </div>
+                    <div class="updated-date-meta">
+                        <span>Updated</span>
+                        <span class="date">{Temporal.PlainDate.from(frontmatter.updated_date).toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
+                    </div>
                 </div>
-                <div class="date-meta">
-                    <span>Written</span>
-                    <span class="date">{Temporal.PlainDate.from(frontmatter.date).toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
-                </div>
-            </div>
-        </header>
-        <article>
-            <slot />
-        </article>
-    </main>
-</Meta>
+            </header>
+            <article>
+                <slot />
+            </article>
+        </main>
+    </body>
+</html>

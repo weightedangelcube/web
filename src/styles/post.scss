@@ -1,4 +1,4 @@
-@use "_var";
+@use "lib/_var";
 
 body {
     background-color: var(--background-color);
@@ -11,16 +11,14 @@ main {
 
 header {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
         "nav nav nav nav nav"
         "title title title title title"
-        "title title title title title"
-        "title title title title title"
         "title title title title title";
-
     row-gap: 40px;
+    margin-bottom: 10vh;
 
     nav {
         grid-area: nav;
@@ -51,10 +49,10 @@ header {
         grid-template-columns: subgrid;
         grid-template-rows: subgrid;
         grid-template-areas:
-            "heading heading heading heading date-meta"
-            "heading heading heading heading date-meta"
-            "heading heading heading heading date-meta"
-            "heading heading heading heading date-meta";
+            "heading heading heading heading written-date-meta"
+            "heading heading heading heading updated-date-meta";
+
+        align-items: end;
         
         div.heading {
             grid-area: heading;
@@ -62,6 +60,8 @@ header {
             span.type {
                 opacity: 65%;
                 text-transform: uppercase;
+                display: block;
+                margin-bottom: 0.25em;
             }
             
             h1 {
@@ -69,24 +69,132 @@ header {
                 font-size: 4.5rem;
                 letter-spacing: -0.06em;
             }
+
+            p.description {
+                opacity: 80%;
+            }
         }
 
-        div.date-meta {
-            grid-area: date-meta;
+        div.written-date-meta {
+            grid-area: written-date-meta;
+        }
+        
+        div.updated-date-meta {
+            grid-area: updated-date-meta;
+        }
 
+
+        div.written-date-meta, div.updated-date-meta {
             span {
                 display: block;
             }
+
             span:not(.date) {
                 text-transform: uppercase;
+                opacity: 65%;
+                margin-bottom: 0.25em;
+            }
+        }
+
+    }
+}
+
+article {
+    line-height: 1.5;
+    margin: 0 20vw;
+    margin-bottom: 80px;
+
+    blockquote {
+        border-left: 5px solid color-mix(in srgb, black, transparent 90%);
+        padding-left: 20px;
+        color: color-mix(in srgb, black, transparent 30%);
+
+        // no bottom margins within blockquotes
+        p:not(:last-child) {
+            margin-bottom: 0
+        }
+    }
+
+    ol {
+        list-style: numbered;
+        
+        li {
+            font-size: 1.5rem;
+            // font-family: var(--font-heading);
+
+            &::marker {
+                
+                font-family: 'Inter Variable'
+            }
+        }
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    em {
+        // this is precise because I'm trying to meet APCA
+        color: color-mix(in srgb, var(--text-color), transparent 29%); 
+        font-variation-settings: 'slnt' 30;
+    }
+
+    strong, em > strong {
+        color: var(--text-color);
+        font-weight: 600;
+    }
+
+    small {
+        color: color-mix(in srgb, black, transparent 30%);
+        font-size: 0.8em;
+    }
+}
+
+
+
+@media (max-width: 775px) {
+    header {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        div.title {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            row-gap: 1rem;
+            grid-template-areas:
+            "heading"
+            "heading"
+            "written-date-meta"
+            "updated-date-meta";
+        }
+    }
+
+    article {
+        margin-left: calc(5vw + 3rem);
+        margin-right: 5vw;
+    }
+}
+
+@media (max-width: 450px) {
+    header {
+        nav {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            row-gap: 0.25rem;
+            grid-template-areas: 
+                "back" 
+                "name";
+
+            span.back {
+                font-size: 1rem;
                 opacity: 65%;
             }
         }
     }
 }
 
-article {
-    line-height: 1.35;
-    // margin-top: 20px;
-    padding: 0 120px;
+@counter-style numbered {
+    system: extends decimal;
+    pad: 2 "0";
+    suffix: " − ";
 }

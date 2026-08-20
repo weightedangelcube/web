@@ -17,29 +17,14 @@
 }
 
 @font-face {
-  font-family: 'Red Hat Mono VF';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/font/red-hat-mono/red-hat-mono-vf.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: 'Red Hat Mono VF';
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/font/red-hat-mono/red-hat-mono-vf-italic.woff2") format("woff2");
-}
-
-@font-face {
   font-family: 'PP Neue Machina Inktrap Variable';
   font-style: normal italic;
   font-weight: 100 900;
   font-display: swap;
   font-feature-settings: 'ss01' 1, 'ss02' 1, 'ss05' 1, 'ss09' 1, 'ss10' 1;
   // alt a, alt r, alt g, loopy braces, high contrast y
-  src: url("https://pangrampangram.com/cdn/shop/files/PPNeueMachina-InktrapVariable.woff") format("woff2");
+  src: url("https://pangrampangram.com/cdn/shop/files/PPNeueMachina-InktrapVariable.woff")
+    format("woff2");
   // Sorry for the hotlink, but I think there's not quite any other way to do this that doesn't involve uploading
   // the font to GitHub.
   // also, it's named woff, but it's actually a woff2 for some reason.
@@ -50,5 +35,7 @@
   font-style: normal italic;
   font-weight: 100 900;
   font-display: swap;
-  src: url("https://pangrampangram.com/cdn/shop/files/PPTelegraf-Variable.woff2") format("woff2");
+  font-variation-settings: 'slnt' 0;
+  src: url("https://pangrampangram.com/cdn/shop/files/PPTelegraf-Variable.woff2")
+    format("woff2");
 }

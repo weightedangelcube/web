@@ -1,4 +1,4 @@
-@use "./font";
+@use "font.scss";
 
 :root {
     color-scheme: light dark;
@@ -8,15 +8,17 @@
     --font-body: 'PP Telegraf Variable', sans-serif;
     --font-code: 'IBM Plex Mono', monospace;
     --font-scale: 1em;
-    --background-color: light-dark(#faf4ed, #242424);
-    --title-color: light-dark(#242424, #faf4ed);
-    --heading-color: light-dark(#242424, #faf4ed);
-    --text-color: light-dark(#242424, #faf4ed);
-    --link-color: light-dark(#242424, #faf4ed);
-    --visited-color: light-dark(#242424, #faf4ed);
-    --code-background-color: light-dark(#dcdfe6, #37393d);
-    --blockquote-color: light-dark(#dcdfe6, #37393d);
+
+	--background-color: light-dark(#faf4ed, #242424);
+	--title-color: light-dark(#242424, #faf4ed);
+	--heading-color: light-dark(#242424, #faf4ed);
+	--text-color: light-dark(#242424, #faf4ed);
+	--link-color: light-dark(#242424, #faf4ed);
+	--visited-color: light-dark(#242424, #faf4ed);
+	--code-background-color: light-dark(#dcdfe6, #37393d);
+	--blockquote-color: light-dark(#dcdfe6, #37393d);
 }
+
 
 // every website gotta have one of these
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -66,4 +68,11 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+
+// safari compatibility (I HATE YOU)
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-variation-settings#browser_compatibility
+* {
+	font-variation-settings: 'slnt' 0;
 }

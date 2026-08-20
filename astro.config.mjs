@@ -5,6 +5,8 @@ import mdx from '@astrojs/mdx';
 
 import react from '@astrojs/react';
 
+import lilypond from 'astro-lilypond';
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://angelcube.dev",
@@ -14,5 +16,5 @@ export default defineConfig({
       '/contact.html': '/contact'
     },
 
-  integrations: [mdx(), react()]
+  integrations: [mdx(), react(), lilypond()]
 });
