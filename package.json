@@ -13,7 +13,6 @@
     "@astrojs/netlify": "^8.2.3",
     "@astrojs/react": "^5.0.0",
     "@lucide/astro": "^1.28.0",
-    "@primer/octicons-react": "^19.22.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "astro": "^7.0.6",
@@ -21,15 +20,17 @@
     "lucide-react": "^1.0.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "scss": "^0.2.4",
+    "sass": "^1.103.1",
     "temporal-polyfill": "^0.3.2"
   },
   "devDependencies": {
-    "netlify-cli": "^27.1.2",
-    "sass-embedded": "^1.83.4"
+    "netlify-cli": "^27.1.2"
   },
   "allowScripts": {
-    "esbuild@0.28.1": true,
-    "esbuild@0.25.5": true
+    "esbuild": true,
+    "@parcel/watcher": true,
+    "sharp": true,
+    "netlify-cli": true,
+    "unix-dgram": true
   }
 }
