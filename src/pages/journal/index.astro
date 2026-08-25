@@ -1,7 +1,27 @@
 ---
 import "../../styles/journal.scss"
+import { Temporal } from "temporal-polyfill"
+
+type PostType = "Ramblings" | "Writings"
+
 
 const posts = Object.values(import.meta.glob('./*.mdx', { eager: true }));
+
+
+// TODO: do this better but I'm too lazy to
+const writings = posts.filter((post: any) => post.frontmatter.type === "Writings").sort((a: any, b: any) => {
+	const date1 = Temporal.PlainDate.from(a.frontmatter.written_date)
+	const date2 = Temporal.PlainDate.from(b.frontmatter.written_date)
+
+	return Temporal.PlainDate.compare(date2, date1)
+})
+
+const ramblings = posts.filter((post: any) => post.frontmatter.type === "Ramblings").sort((a: any, b: any) => {
+	const date1 = Temporal.PlainDate.from(a.frontmatter.written_date)
+	const date2 = Temporal.PlainDate.from(b.frontmatter.written_date)
+
+	return Temporal.PlainDate.compare(date2, date1)
+})
 ---
 
 <!doctype html>
@@ -21,7 +41,14 @@ const posts = Object.values(import.meta.glob('./*.mdx', { eager: true }));
 	<body>
         <main>
             <h1>journal →</h1>
-            {posts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+			<h2>writings</h2>
+			<ul>
+				{writings.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+			</ul>
+			<h2>ramblings</h2>
+			<ul>
+				{ramblings.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+			</ul>
         </main>
 	</body>
 </html>

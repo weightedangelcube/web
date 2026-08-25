@@ -7,9 +7,28 @@ body {
 
 h1 {
     font-family: var(--font-heading);
+    font-weight: 300;
     font-size: 2rem;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0.5em 0;
+}
+
+ul {
+    list-style: dash;
+    margin: 0.5rem;
+}
+
+@counter-style dash {
+  system: cyclic;
+  symbols: "\2043";
+  suffix: " ";
 }
 
 main {
     margin: 20px;
 }
+
