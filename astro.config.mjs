@@ -7,8 +7,6 @@ import react from '@astrojs/react';
 
 import lilypond from 'astro-lilypond';
 
-import netlify from '@astrojs/netlify';
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://angelcube.dev",
@@ -18,6 +16,5 @@ export default defineConfig({
       '/contact.html': '/contact'
     },
 
-  integrations: [mdx(), react(), lilypond()],
-  adapter: netlify()
+  integrations: [mdx(), react(), lilypond()]
 });

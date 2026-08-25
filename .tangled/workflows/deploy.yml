@@ -7,6 +7,7 @@ engine: "microvm"
 dependencies:
   - nodejs_24
   - lilypond
+  - netlify-cli
 
 steps:
   - name: "install dependencies"
@@ -14,7 +15,7 @@ steps:
   - name: "deploy to Netlify"
     command: |
       commit_msg=$(git show "$TANGLED_SHA" --pretty=%B -s)
-      npx netlify deploy \
+      netlify deploy \
         --site $NETLIFY_SITE_ID \
         --message="${commit_msg:-deploy from Tangled CI}"
     environment:
