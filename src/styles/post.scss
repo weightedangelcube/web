@@ -58,6 +58,7 @@ header {
             grid-area: heading;
 
             span.type {
+                font-family: var(--font-code);
                 opacity: 65%;
                 text-transform: uppercase;
                 display: block;
@@ -66,6 +67,7 @@ header {
             
             h1 {
                 font-family: var(--font-heading);
+                font-weight: 300;
                 font-size: 4.5rem;
                 letter-spacing: -0.06em;
             }
@@ -89,7 +91,13 @@ header {
                 display: block;
             }
 
+            span.date {
+                font-family: var(--font-heading);
+                font-weight: 300;
+            }
+
             span:not(.date) {
+                font-family: var(--font-code);
                 text-transform: uppercase;
                 opacity: 65%;
                 margin-bottom: 0.25em;
