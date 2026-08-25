@@ -3,6 +3,7 @@
 body {
     background-color: var(--background-color);
     font-family: var(--font-body);
+    color: var(--text-color);
 }
 
 main {
@@ -34,7 +35,7 @@ header {
             grid-area: back;
 
             a {
-                color: black
+                color: var(--text-color);
             }
         }
 
@@ -113,9 +114,9 @@ article {
     margin-bottom: 80px;
 
     blockquote {
-        border-left: 5px solid color-mix(in srgb, black, transparent 90%);
+        border-left: 5px solid color-mix(in srgb, var(--text-color), transparent 90%);
         padding-left: 20px;
-        color: color-mix(in srgb, black, transparent 30%);
+        color: color-mix(in srgb, var(--text-color), transparent 30%);
 
         // no bottom margins within blockquotes
         p:not(:last-child) {
@@ -153,7 +154,7 @@ article {
     }
 
     small {
-        color: color-mix(in srgb, black, transparent 30%);
+        color: color-mix(in srgb, var(--text-color), transparent 30%);
         font-size: 0.8em;
     }
 }
