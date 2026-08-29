@@ -1,3 +1,6 @@
+import { Temporal } from "temporal-polyfill";
+globalThis.Temporal ??= Temporal;
+
 // @ts-check
 import { defineConfig } from 'astro/config';
 

@@ -1,27 +1,22 @@
 ---
-import "../../styles/journal.scss"
-import { Temporal } from "temporal-polyfill"
+import "../../styles/journal.scss";
+import { getCollection } from "astro:content";
 
-type PostType = "Ramblings" | "Writings"
+type PostType = "Ramblings" | "Writings";
 
+async function getSortedPosts(type: PostType) {
+	return (
+		await getCollection("journal", ({ data }) => {
+			return data.type === type;
+		})
+	).sort(
+		(a: any, b: any) =>
+			Temporal.PlainDate.compare(b.data.written_date, a.data.written_date)
+	)
+}
 
-const posts = Object.values(import.meta.glob('./*.mdx', { eager: true }));
-
-
-// TODO: do this better but I'm too lazy to
-const writings = posts.filter((post: any) => post.frontmatter.type === "Writings").sort((a: any, b: any) => {
-	const date1 = Temporal.PlainDate.from(a.frontmatter.written_date)
-	const date2 = Temporal.PlainDate.from(b.frontmatter.written_date)
-
-	return Temporal.PlainDate.compare(date2, date1)
-})
-
-const ramblings = posts.filter((post: any) => post.frontmatter.type === "Ramblings").sort((a: any, b: any) => {
-	const date1 = Temporal.PlainDate.from(a.frontmatter.written_date)
-	const date2 = Temporal.PlainDate.from(b.frontmatter.written_date)
-
-	return Temporal.PlainDate.compare(date2, date1)
-})
+const writings = await getSortedPosts("Writings")
+const ramblings = await getSortedPosts("Ramblings")
 ---
 
 <!doctype html>
@@ -32,23 +27,39 @@ const ramblings = posts.filter((post: any) => post.frontmatter.type === "Ramblin
 		<meta name="viewport" content="width = device-width, initial-scale = 1" />
 		<title>journal · angelcube</title>
 
-        <!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
 	</head>
 
 	<body>
-        <main>
-            <h1>journal →</h1>
-			<h2>writings</h2>
-			<ul>
-				{writings.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+		<main>
+		<header>
+			<nav>
+			<span class="back">
+				<a href="/journal">← back to journal</a>
+			</span>
+			<span class="name">angelcube ✦</span>
+			</nav>
+		</header>
+		<h1>journal →</h1>
+		<h2>writings</h2>
+		<ul>
+			{writings.map((post: any) => (
+				<li>
+					<a href={`/journal/${post.id}`}>{post.data.title}</a>
+				</li>
+			))}
+		</ul>
+		<h2>ramblings</h2>
+		<ul>
+			{ramblings.map((post: any) => (
+				<li>
+					<a href={`/journal/${post.id}`}>{post.data.title}</a>
+				</li>
+			))}
 			</ul>
-			<h2>ramblings</h2>
-			<ul>
-				{ramblings.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-			</ul>
-        </main>
+		</main>
 	</body>
 </html>

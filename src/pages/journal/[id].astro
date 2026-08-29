@@ -1,18 +1,17 @@
 ---
-import "../styles/post.scss"
-import { Temporal } from "temporal-polyfill"
+import "../../styles/post.scss"
+import { getCollection, render } from 'astro:content';
 
-type PostType = "Ramblings" | "Writings"
-
-type Frontmatter = {
-    title: string,
-    description: string,
-    type: PostType,
-    written_date: string,
-    updated_date: string
+export async function getStaticPaths() {
+    const posts = await getCollection("journal")
+    return posts.map(post => ({
+        params: { id: post.id },
+        props: { post },
+    }))
 }
 
-const frontmatter = Astro.props.frontmatter as Frontmatter
+const { post } = Astro.props;
+const { Content } = await render(post)
 ---
 
 <!doctype html>
@@ -21,7 +20,7 @@ const frontmatter = Astro.props.frontmatter as Frontmatter
 		<!-- Important metadata, and the like -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width = device-width, initial-scale = 1" />
-		<title>{frontmatter.title} · a journal by angelcube</title>
+		<title>{post.data.title} · a journal by angelcube</title>
 
         <!-- Favicon -->
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -40,22 +39,22 @@ const frontmatter = Astro.props.frontmatter as Frontmatter
                 </nav>
                 <div class="title">
                     <div class="heading">
-                        <span class="type">{frontmatter.type}</span>
-                        <h1>{frontmatter.title}</h1>
-                        <p class="description">{frontmatter.description}</p>
+                        <span class="type">{post.data.type}</span>
+                        <h1>{post.data.title}</h1>
+                        <p class="description">{post.data.description}</p>
                     </div>
                     <div class="written-date-meta">
                         <span>Written</span>
-                        <span class="date">{Temporal.PlainDate.from(frontmatter.written_date).toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
+                        <span class="date">{post.data.written_date.toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
                     </div>
                     <div class="updated-date-meta">
                         <span>Updated</span>
-                        <span class="date">{Temporal.PlainDate.from(frontmatter.updated_date).toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
+                        <span class="date">{post.data.updated_date.toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
                     </div>
                 </div>
             </header>
             <article>
-                <slot />
+                <Content />
             </article>
         </main>
     </body>
