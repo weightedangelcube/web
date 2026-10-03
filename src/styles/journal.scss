@@ -98,11 +98,16 @@ ul.post-list {
 
                 span {
                     display: inline;
+                    font-size: 0.8rem;
                 }
 
                 span.published-date::after {
                     content: ' · '
                 }
+            }
+            
+            a {
+                font-size: 1.5rem;
             }
         }
         
