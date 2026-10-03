@@ -21,36 +21,13 @@ header {
     row-gap: 40px;
     margin-bottom: 10vh;
 
-    nav {
-        grid-area: nav;
-        display: grid;
-        grid-template-columns: subgrid;
-        grid-template-areas: 
-            "back . . . name";
-        
-        font-family: var(--font-heading);
-        font-size: 1.5rem;
-
-        span.back {
-            grid-area: back;
-
-            a {
-                color: var(--text-color);
-            }
-        }
-
-        span.name {
-            grid-area: name;
-        }
-    }
-
     div.title {
         grid-area: title;
         display: grid;
         grid-template-columns: subgrid;
         grid-template-rows: subgrid;
         grid-template-areas:
-            "heading heading heading heading written-date-meta"
+            "heading heading heading heading published-date-meta"
             "heading heading heading heading updated-date-meta";
 
         align-items: end;
@@ -79,8 +56,8 @@ header {
             }
         }
 
-        div.written-date-meta {
-            grid-area: written-date-meta;
+        div.published-date-meta {
+            grid-area: published-date-meta;
         }
         
         div.updated-date-meta {
@@ -88,7 +65,7 @@ header {
         }
 
 
-        div.written-date-meta, div.updated-date-meta {
+        div.published-date-meta, div.updated-date-meta {
             span {
                 display: block;
             }
@@ -168,8 +145,6 @@ article {
     }
 }
 
-
-
 @media (max-width: 775px) {
     header {
         grid-template-columns: 1fr;
@@ -182,7 +157,7 @@ article {
             grid-template-areas:
             "heading"
             "heading"
-            "written-date-meta"
+            "published-date-meta"
             "updated-date-meta";
         }
     }

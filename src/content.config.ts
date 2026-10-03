@@ -8,7 +8,7 @@ const journal = defineCollection({
         title: z.string(),
         description: z.string(),
         type: z.enum(["Writings", "Ramblings"]),
-        written_date: z.string().transform((value) => Temporal.PlainDate.from(value)),
+        published_date: z.string().transform((value) => Temporal.PlainDate.from(value)),
         updated_date: z.string().transform((value) => Temporal.PlainDate.from(value)),
     }),
 })

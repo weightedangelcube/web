@@ -1,4 +1,5 @@
 ---
+import Nav from "../../components/nav.astro";
 import "../../styles/post.scss"
 import { getCollection, render } from 'astro:content';
 
@@ -31,21 +32,16 @@ const { Content } = await render(post)
     <body>
         <main>
             <header>
-                <nav>
-                    <span class="back">
-                        <a href="/journal">← back to journal</a>
-                    </span>
-                    <span class="name">angelcube ✦</span>
-                </nav>
+                <Nav title="← back to journal" href="/journal" />
                 <div class="title">
                     <div class="heading">
                         <span class="type">{post.data.type}</span>
                         <h1>{post.data.title}</h1>
                         <p class="description">{post.data.description}</p>
                     </div>
-                    <div class="written-date-meta">
-                        <span>Written</span>
-                        <span class="date">{post.data.written_date.toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
+                    <div class="published-date-meta">
+                        <span>Published</span>
+                        <span class="date">{post.data.published_date.toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
                     </div>
                     <div class="updated-date-meta">
                         <span>Updated</span>

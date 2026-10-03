@@ -8,7 +8,7 @@ type Frontmatter = {
     title: string,
     description: string,
     type: PostType,
-    written_date: string,
+    published_date: string,
     updated_date: string
 }
 
@@ -44,9 +44,9 @@ const frontmatter = Astro.props.frontmatter as Frontmatter
                         <h1>{frontmatter.title}</h1>
                         <p class="description">{frontmatter.description}</p>
                     </div>
-                    <div class="written-date-meta">
+                    <div class="published-date-meta">
                         <span>Written</span>
-                        <span class="date">{Temporal.PlainDate.from(frontmatter.written_date).toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
+                        <span class="date">{Temporal.PlainDate.from(frontmatter.published_date).toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
                     </div>
                     <div class="updated-date-meta">
                         <span>Updated</span>

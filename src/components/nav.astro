@@ -1,0 +1,12 @@
+---
+import "../styles/components/nav.scss"
+
+const { title, href } = Astro.props
+---
+
+<nav>
+    <span class="back">
+        <a href={href}>{title}</a>
+    </span>
+    <span class="name">angelcube ✦</span>
+</nav>

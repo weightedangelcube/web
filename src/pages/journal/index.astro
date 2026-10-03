@@ -1,4 +1,5 @@
 ---
+import Nav from "../../components/nav.astro";
 import "../../styles/journal.scss";
 import { getCollection } from "astro:content";
 
@@ -11,7 +12,7 @@ async function getSortedPosts(type: PostType) {
 		})
 	).sort(
 		(a: any, b: any) =>
-			Temporal.PlainDate.compare(b.data.written_date, a.data.written_date)
+			Temporal.PlainDate.compare(b.data.published_date, a.data.published_date)
 	)
 }
 
@@ -35,30 +36,37 @@ const ramblings = await getSortedPosts("Ramblings")
 
 	<body>
 		<main>
-		<header>
-			<nav>
-			<span class="back">
-				<a href="/journal">← back to journal</a>
-			</span>
-			<span class="name">angelcube ✦</span>
-			</nav>
-		</header>
-		<h1>journal →</h1>
-		<h2>writings</h2>
-		<ul>
-			{writings.map((post: any) => (
-				<li>
-					<a href={`/journal/${post.id}`}>{post.data.title}</a>
-				</li>
-			))}
-		</ul>
-		<h2>ramblings</h2>
-		<ul>
-			{ramblings.map((post: any) => (
-				<li>
-					<a href={`/journal/${post.id}`}>{post.data.title}</a>
-				</li>
-			))}
+			<header>
+				<Nav title="← return home" href="/" />
+				<div class="title">
+					<h1>journal →</h1>
+					<p class="description">Words I wanted to say.</p>
+				</div>
+			</header>
+			
+			<h2>writings</h2>
+			<ul class="post-list">
+				{writings.map((post: any) => (
+					<li>
+						<div class="post-meta">
+							<span class="published-date">{post.data.published_date}</span>
+							<span class="description">{post.data.description}</span>
+						</div>
+						<a href={`/journal/${post.id}`}>{post.data.title}</a>
+					</li>
+				))}
+			</ul>
+			<h2>ramblings</h2>
+			<ul class="post-list">
+				{ramblings.map((post: any) => (
+					<li>
+						<div class="post-meta">
+							<span class="published-date">{post.data.published_date}</span>
+							<span class="description">{post.data.description}</span>
+						</div>
+						<a href={`/journal/${post.id}`}>{post.data.title}</a>
+					</li>
+				))}
 			</ul>
 		</main>
 	</body>
