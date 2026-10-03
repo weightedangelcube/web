@@ -17,7 +17,7 @@ steps:
       commit_msg=$(git show "$TANGLED_SHA" --pretty=%B -s)
       netlify deploy \
         --site $NETLIFY_SITE_ID \
-        --message="${commit_msg:-deploy from Tangled CI}"
+        --message="${commit_msg:-deploy from Tangled CI}" \
         --prod
     environment:
       NODE_ENV: "production"
