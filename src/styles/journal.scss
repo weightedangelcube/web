@@ -8,12 +8,12 @@ body {
 
 header {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr 15rem;
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
-        "nav nav nav nav nav"
-        "title title title title title"
-        "title title title title title";
+        "nav nav"
+        "title title"
+        "title title";
     row-gap: 40px;
     margin-bottom: 5vh;
 
@@ -36,7 +36,6 @@ header {
 }
 
 h2 {
-
     font-family: var(--font-heading);
     font-size: 3rem;
     font-weight: 350;
@@ -56,9 +55,8 @@ ul.post-list {
         display: contents;
 
         div.post-meta {
-
             span {
-                white-space: nowrap;
+                text-wrap-mode: nowrap;
                 text-transform: uppercase;
                 display: block
             }
@@ -75,7 +73,7 @@ ul.post-list {
         }
 
         a {
-            display: table-cell;
+            display: block;
             font-family: var(--font-heading);
             color: var(--text-color);
             font-size: 1.5rem;
@@ -83,10 +81,34 @@ ul.post-list {
     }
 }
 
-@counter-style dash {
-  system: cyclic;
-  symbols: "\2043";
-  suffix: " ";
+@media (max-width: 775px) {
+    header {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    ul.post-list {
+        li {
+            display: block;
+
+            div.post-meta {
+                opacity: 65%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                span {
+                    display: inline;
+                }
+
+                span.published-date::after {
+                    content: ' · '
+                }
+            }
+        }
+        
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
 }
 
 main {
