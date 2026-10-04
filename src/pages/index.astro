@@ -1,3 +1,6 @@
+---
+import "../styles/index.scss"
+---
 <!doctype html>
 <html lang="en-CA">
 	<head>
@@ -12,8 +15,53 @@
 		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
 	</head>
     <body>
-        <p>This site is currently a work in progress. - Angel, Aug 1 2026</p>
-        <p>If it's been a ridiculously long amount of time since the date above, please go bug Angel at <code>angel@angelcube.dev</code>.</p>
-		<p>In the meantime, care to check out the <a href="/journal">journal</a>?</p>
+        <main>
+			<header>
+				<picture>
+					<source srcset="/img/header-dark.png" media="(prefers-color-scheme: dark)">
+					<img alt="A pixelated, artistic rendition of Angel. He has short, messy dark hair, round-framed 
+							  glasses, and is wearing a cropped T-shirt, jacket, shorts, and sneakers. Above him is a 
+							  melting halo, and behind him is a pair of angel wings. Four Angels in varying positions 
+							  are depicted." src="/img/header-light.png">
+				</picture>
+
+				<div class="title">
+					<h1>angelcube ✦</h1>
+					<p>The digital garden of computer human Angel Wang. </p>
+				</div>
+				<nav>
+					<ul>
+						<li>
+							<a href="/journal">Journal</a>
+						</li>
+						<li>
+							<a href="/projects">Projects</a>
+						</li>
+						<li>
+							<a href="/now">Now</a>
+						</li>
+						<li>
+							<a href="/about">About</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<section id="about">
+				<article>
+					<h2>about the author</h2>
+					<p>
+						Angel Wang <em>(he/she)</em> is a computer science student at the University of Toronto. He's a
+						big fan of Arch Linux, TypeScript, CSS, and making the web a softer, more wholesome place.
+					</p>
+					<h3>NOW</h3>
+					<a href="/now">Check out what she's been up to recently →</a>
+				</article>
+				<picture>
+					<source srcset="/img/laptop-dark.png" media="(prefers-color-scheme: dark)">
+					<img alt="Angel lying on her front typing at a laptop." src="/img/laptop-light.png">
+				</picture>
+			</section>
+		</main>
     </body>
 </html>

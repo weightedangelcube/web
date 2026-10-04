@@ -3,8 +3,12 @@
 body {
     background-color: var(--background-color);
     font-family: var(--font-body);
+    color: var(--text-color);
 }
 
+main {
+    margin: 20px;
+}
 
 header {
     display: grid;
@@ -116,7 +120,4 @@ ul.post-list {
     }
 }
 
-main {
-    margin: 20px;
-}
 
