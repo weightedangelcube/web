@@ -27,7 +27,7 @@ header {
         h1 {
             font-family: var(--font-heading);
             font-weight: 300;
-            font-size: 4.75rem;
+            font-size: 6rem;
             line-height: 1;
             letter-spacing: -0.08em;
         }
@@ -41,7 +41,7 @@ header {
 
 h2 {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 350;
     line-height: 0.9;
     letter-spacing: -0.04em;
@@ -89,6 +89,14 @@ ul.post-list {
     header {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+
+        div.title h1 {
+            font-size: 4rem;
+        }
+    }
+
+    h2 {
+        font-size: 2rem;
     }
 
     ul.post-list {
@@ -111,7 +119,7 @@ ul.post-list {
             }
             
             a {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
             }
         }
         
@@ -119,5 +127,3 @@ ul.post-list {
         grid-template-rows: auto;
     }
 }
-
-

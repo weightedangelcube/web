@@ -106,35 +106,23 @@ section#about {
 
 }
 
-@media (max-width: 850px) {
+@media (max-width: 875px) {
     main {
         margin: 20px;
     }
 
     header {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "image"
-            "title"
-            "nav";
-
         div.title {
-            margin-bottom: 2rem;
             h1 {
                 font-size: 5rem;
             }
         }
 
-        nav {
-            ul {
-                align-items: initial;
-
-                li {
-                    font-size: 1.5rem;
-                }
+        nav ul {
+            li {
+                font-size: 1.5rem;
             }
         }
-
     }
 
     section#about {
@@ -148,9 +136,31 @@ section#about {
     }
 }
 
-@media (max-width: 650px) {
+
+
+@media (max-width: 715px) {
+    main {
+        margin: 20px;
+    }
+
     header {
         margin-bottom: 0;
+
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "image"
+            "title"
+            "nav";
+
+        div.title {
+            margin-bottom: 2rem;
+        }
+
+        nav {
+            ul {
+                align-items: initial;
+            }
+        }
     }
 
     section#about {
@@ -171,10 +181,21 @@ section#about {
 
 @media (max-width: 515px) {
     header div.title h1 {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
 
     section#about article h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }
+
+@media (max-width: 400px) {
+    header div.title h1 {
+        font-size: 3rem;
+    }
+
+    section#about article h2 {
+        font-size: 2rem;
+    }
+}
+
