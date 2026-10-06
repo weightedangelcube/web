@@ -1,4 +1,10 @@
-
+---
+import { Content as Now } from "../../content/now.mdx"
+import { Content as NowPrev } from "../../content/now-prev.mdx"
+import Nav from "../components/nav.astro";
+import "../styles/now.scss"
+import LBPinned from "../components/preact/LBPinned";
+---
 <!doctype html>
 <html lang="en-CA">
 	<head>
@@ -13,6 +19,27 @@
 		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
 	</head>
     <body>
-        <p>Work in progress...</p>
+		<main>
+			<header>
+				<Nav title="← return home" href="/" />
+				<div class="title">
+					<h1>now →</h1>
+					<p class="description">Recent thoughts, interests, activities.</p>
+				</div>
+			</header>
+			<article>
+				<section id="now">
+					<Now />
+				</section>
+				<section id="also">
+					<h3>Also ↓</h3>
+					<LBPinned client:only="preact" />
+				</section>
+				<hr>
+				<section id="now-prev">
+					<NowPrev />
+				</section>
+			</article>
+		</main>
     </body>
 </html>

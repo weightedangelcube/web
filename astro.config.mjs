@@ -6,9 +6,9 @@ import { defineConfig } from 'astro/config';
 
 import mdx from '@astrojs/mdx';
 
-import react from '@astrojs/react';
-
 import lilypond from 'astro-lilypond';
+
+import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,5 +19,5 @@ export default defineConfig({
       '/contact.html': '/contact'
     },
 
-  integrations: [mdx(), react(), lilypond()]
+  integrations: [mdx(), lilypond(), preact()]
 });
