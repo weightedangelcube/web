@@ -41,7 +41,7 @@ header {
 
 h2 {
     font-family: var(--font-heading);
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 350;
     line-height: 0.9;
     letter-spacing: -0.04em;
@@ -85,7 +85,7 @@ ul.post-list {
     }
 }
 
-@media (max-width: 775px) {
+@media (max-width: 600px) {
     header {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
