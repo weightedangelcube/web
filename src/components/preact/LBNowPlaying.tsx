@@ -79,7 +79,7 @@ export default function LBNowPlaying() {
                 <>
                     {" "}on <MaybeLink href={song.release.url}>{song.release.title}</MaybeLink>
                 </>
-        )} [<a href={makeLBURL("/user/angecube")}>↗</a>] {" • "}
+        )} [<a href={makeLBURL("/user/angelcube")}>↗</a>] {" • "}
     </span>
 
     return (<div id="now-playing-wrapper">
