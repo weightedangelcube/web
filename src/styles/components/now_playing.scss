@@ -1,0 +1,47 @@
+div#now-playing-wrapper {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    font-family: var(--font-code);
+    padding: 0.4em;
+    line-height: 1.2;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+
+    div#now-playing {
+        animation: marquee 100s linear infinite;
+        min-width: 100%;
+
+        span {
+            white-space: nowrap;
+            a {
+                color: var(--background-color);
+            }
+        }
+
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100%));
+    }
+}
+
+@media (max-width: 775px) {
+    div#now-playing-wrapper div#now-playing {
+        animation: marquee 60s linear infinite;
+    }
+}
+
+@media (max-width: 575px) {
+    div#now-playing-wrapper div#now-playing {
+        animation: marquee 20s linear infinite;
+    }
+}

@@ -19,5 +19,5 @@ export default defineConfig({
       '/contact.html': '/contact'
     },
 
-  integrations: [mdx(), lilypond(), preact()]
+  integrations: [mdx(), lilypond(), preact({ compat: true })]
 });
