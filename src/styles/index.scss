@@ -4,6 +4,7 @@ body {
     background-color: var(--background-color);
     font-family: var(--font-body);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 main {
@@ -169,6 +170,7 @@ section#about {
         gap: 2rem;
 
         picture {
+            z-index: -1;
             display: flex;
             justify-content: end;
             padding-right: 1vw;

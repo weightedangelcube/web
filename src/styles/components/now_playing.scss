@@ -2,18 +2,21 @@ div#now-playing-wrapper {
     background-color: var(--text-color);
     color: var(--background-color);
     font-family: var(--font-code);
-    padding: 0.4em;
-    line-height: 1.2;
+
     overflow: hidden;
-    white-space: nowrap;
     width: 100%;
 
     div#now-playing {
+        display: flex;
+        width: max-content;
         animation: marquee 100s linear infinite;
-        min-width: 100%;
 
         span {
+            flex-shrink: 0;
+            padding: 0.4em;
+            line-height: 1.2;
             white-space: nowrap;
+
             a {
                 color: var(--background-color);
             }
@@ -26,11 +29,11 @@ div#now-playing-wrapper {
 }
 
 @keyframes marquee {
-    from {
+    0% {
         transform: translateX(0);
     }
-    to {
-        transform: translateX(calc(-100%));
+    100% {
+        transform: translateX(-50%);
     }
 }
 

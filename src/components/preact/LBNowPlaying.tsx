@@ -84,7 +84,7 @@ export default function LBNowPlaying() {
 
     return (<div id="now-playing-wrapper">
         <div id="now-playing">
-            {[content, content, content, content, content]}
+            {[content, content, content, content, content, content, content, content]}
         </div>
     </div>)
 }
