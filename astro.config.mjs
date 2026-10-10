@@ -16,5 +16,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
     site: "https://angelcube.dev",
     integrations: [mdx(), lilypond(), preact()],
-    adapter: cloudflare()
+    adapter: cloudflare({
+        prerenderEnvironment: "node",
+    }),
 })
