@@ -32,3 +32,6 @@ pnpm-debug.log*
 content/journal/test.mdx
 # Local Netlify folder
 .netlify
+
+# secrets
+.dev.vars

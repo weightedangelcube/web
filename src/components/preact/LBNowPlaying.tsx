@@ -1,6 +1,5 @@
 import { Fragment } from "preact"
 import { useEffect, useState } from "preact/hooks"
-import "../../styles/components/now_playing.scss"
 
 interface LBTrack {
     track_name: string
@@ -71,22 +70,18 @@ export default function LBNowPlaying() {
 
     if (!song) return null
 
-    const content = <span>
-        NOW LISTENING TO −{" "}
-        <MaybeLink href={song.url}>{song.title}</MaybeLink>{" "}
-        by <ArtistCredits artists={song.artists} />
-        {song.release && (
-                <>
-                    {" "}on <MaybeLink href={song.release.url}>{song.release.title}</MaybeLink>
-                </>
-        )} [<a href={makeLBURL("/user/angelcube")}>↗</a>] {" • "}
-    </span>
-
-    return (<div id="now-playing-wrapper">
-        <div id="now-playing">
-            {[content, content, content, content, content, content, content, content]}
-        </div>
-    </div>)
+    return (
+        <span>
+            NOW LISTENING TO −{" "}
+            <MaybeLink href={song.url}>{song.title}</MaybeLink>{" "}
+            by <ArtistCredits artists={song.artists} />
+            {song.release && (
+                    <>
+                        {" "}on <MaybeLink href={song.release.url}>{song.release.title}</MaybeLink>
+                    </>
+            )} [<a href={makeLBURL("/user/angelcube")}>↗</a>] {" • "}
+        </span>
+    )
 }
 
 

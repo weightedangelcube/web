@@ -3,8 +3,5 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
-  },
-  "include": [
-    "./worker-configuration.d.ts"
-  ]
+  }
 }
