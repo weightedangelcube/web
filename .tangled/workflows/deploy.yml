@@ -3,16 +3,21 @@ when:
     branch: ["main"]
 
 engine: "microvm"
+image: "nixos"
+
+environment: 
+  MINIFLARE_WORKERD_PATH: 
 
 dependencies:
   - nodejs_26
   - lilypond
+  - steam-run
 
 steps:
   - name: "install dependencies"
     command: npm ci
   - name: "build"
-    command: npm run build
+    command: steam-run npm run build
   - name: "deploy"
     command: "npx wrangler deploy --message \"$(git log -1 --pretty=%B)\""
     environment:
