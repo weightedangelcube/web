@@ -78,3 +78,8 @@ table {
 * {
 	font-variation-settings: 'slnt' 0;
 }
+
+*::selection {
+	color: var(--background-color);
+	background-color: var(--text-color);
+}

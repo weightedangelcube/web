@@ -2,6 +2,7 @@
 import Nav from "../../components/nav.astro";
 import "../../styles/journal.scss";
 import { getCollection } from "astro:content";
+import { Temporal } from "temporal-polyfill";
 
 type PostType = "Ramblings" | "Writings";
 

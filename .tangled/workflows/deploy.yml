@@ -5,7 +5,7 @@ when:
 engine: "microvm"
 
 dependencies:
-  - nodejs_24
+  - nodejs_26
   - lilypond
 
 steps:

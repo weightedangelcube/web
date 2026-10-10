@@ -10,14 +10,11 @@ import lilypond from 'astro-lilypond';
 
 import preact from '@astrojs/preact';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://angelcube.dev",
-
-  redirects: {
-      '/projects.html': '/projects',
-      '/contact.html': '/contact'
-    },
-
-  integrations: [mdx(), lilypond(), preact({ compat: true })]
-});
+    site: "https://angelcube.dev",
+    integrations: [mdx(), lilypond(), preact()],
+    adapter: cloudflare()
+})

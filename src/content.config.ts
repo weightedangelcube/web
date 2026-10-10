@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import { Temporal } from "temporal-polyfill";
 
 const journal = defineCollection({
     loader: glob({ base: "./content/journal", pattern: "**/*.{md,mdx}" }),

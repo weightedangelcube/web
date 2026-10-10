@@ -1,3 +1,8 @@
+---
+import Nav from "../components/nav.astro";
+import "../styles/about.scss"
+import { Content } from "../../content/about.mdx"
+---
 
 <!doctype html>
 <html lang="en-CA">
@@ -13,6 +18,17 @@
 		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
 	</head>
     <body>
-        <p>Work in progress...</p>
+        <main>
+			<header>
+				<Nav title="← return home" href="/" />
+				<div class="title">
+					<h1>about →</h1>
+					<p class="description">Who even is this guy?</p>
+				</div>
+			</header>
+			<article>
+				<Content />
+			</article>
+		</main>
     </body>
 </html>
