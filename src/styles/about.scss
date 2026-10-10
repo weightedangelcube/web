@@ -1,4 +1,5 @@
-@use "./lib/var";
+@use "lib/var";
+@use "lib/article";
 
 body {
     background-color: var(--background-color);
@@ -10,104 +11,27 @@ main {
     margin: 20px;
 }
 
-header {
-    display: grid;
-    grid-template-columns: 1fr 15rem;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-        "nav nav"
-        "title title"
-        "title title";
-    row-gap: 40px;
-    margin-bottom: 5vh;
-
-    div.title {
-        grid-area: title;
-
-        h1 {
-            font-family: var(--font-heading);
-            font-weight: 300;
-            font-size: 6rem;
-            line-height: 1;
-            letter-spacing: -0.08em;
-        }
-
-        p.description {
-            margin: 0.5em 0;
-            opacity: 80%;
-        }
-    }
-}
-
 article {
-    line-height: 1.5;
-    margin: 0 20vw;
-    margin-bottom: 80px;
+    @extend %article;
 
     h2 {
-        font-family: var(--font-code);
-        text-transform: uppercase;
-        font-size: 1.25rem;
-        color: color-mix(in srgb, var(--text-color), transparent 29%);
-        line-height: 1.2;
-        margin-bottom: 0.1em;
-    }
-
-    h1 {
-        font-family: var(--font-heading);
-        line-height: 1.2;
         font-size: 2.5rem;
-        font-weight: 300;
-        letter-spacing: -0.06em;
-        margin-bottom: 0.1em;
     }
 
-    p {
-        margin-bottom: 0.8em;
-    }
+    // ul:has(a) {
+    //     list-style: "⁃ ";
 
-    strong {
-        font-weight: bold;
-    }
-
-    em {
-        // this is precise because I'm trying to meet APCA
-        color: color-mix(in srgb, var(--text-color), transparent 29%); 
-        font-variation-settings: 'slnt' 30;
-    }
-
-    a {
-        color: var(--text-color)
-    }
-
-    ul:has(a) {
-        list-style: "⁃ ";
-
-        a {
-            // font-family: var(--font-heading);
-            // text-transform: uppercase;
-            font-size: 1.125rem;
-            color: var(--text-color)
-        }
-    }
-
-    hr {
-        margin: 3rem auto 2rem auto;
-        width: 60%;
-        opacity: 65%;
-    }
+    //     a {
+    //         // font-family: var(--font-heading);
+    //         // text-transform: uppercase;
+    //         font-size: 1.125rem;
+    //         color: var(--text-color)
+    //     }
+    // }
 }
 
 @media (max-width: 775px) {
-    header div.title h1 {
-        font-size: 4rem;
-
-    }
-
     article {
-        margin-left: 0;
-        margin-right: 0;
-
         h1 {
             font-size: 2rem;
         }

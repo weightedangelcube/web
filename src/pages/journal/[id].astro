@@ -1,7 +1,7 @@
 ---
-import Nav from "../../components/nav.astro";
+import Nav from "../../components/Nav.astro"
 import "../../styles/post.scss"
-import { getCollection, render } from 'astro:content';
+import { getCollection, render } from 'astro:content'
 
 export async function getStaticPaths() {
     const posts = await getCollection("journal")

@@ -32,7 +32,7 @@ export default function SteamNowPlaying() {
     return (
         <span>
             NOW PLAYING − <MaybeLink href={game.url}>{game.name}</MaybeLink>{" "}
-            on Steam [<a href="https://steamcommunity.com/profiles/76561199245582776">↗</a>] {" • "}
+            on Steam [<a href="https://steamcommunity.com/profiles/76561199245582776">↗</a>] {" · "}
         </span>
     )
 }

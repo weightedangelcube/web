@@ -1,5 +1,5 @@
 ---
-import Nav from "../../components/nav.astro";
+import Header from "../../components/Header.astro";
 import "../../styles/journal.scss";
 import { getCollection } from "astro:content";
 import { Temporal } from "temporal-polyfill";
@@ -37,13 +37,7 @@ const ramblings = await getSortedPosts("Ramblings")
 
 	<body>
 		<main>
-			<header>
-				<Nav title="← return home" href="/" />
-				<div class="title">
-					<h1>journal →</h1>
-					<p class="description">Words I wanted to say.</p>
-				</div>
-			</header>
+			<Header title="journal →" description="Words I wanted to say." />
 			
 			<h2>writings</h2>
 			<ul class="post-list">

@@ -1,0 +1,13 @@
+---
+import Nav from "./Nav.astro"
+const { title, description, navTitle="← return home", navHref="/" } = Astro.props
+import "../styles/components/header.scss"
+---
+
+<header>
+    <Nav title={navTitle} href={navHref} />
+    <div class="title">
+        <h1>{title}</h1>
+        <p class="description">{description}</p>
+    </div>
+</header>

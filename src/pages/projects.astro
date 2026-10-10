@@ -1,5 +1,5 @@
 ---
-import Nav from "../components/nav.astro";
+import Header from "../components/Header.astro";
 import "../styles/projects.scss"
 ---
 
@@ -18,13 +18,7 @@ import "../styles/projects.scss"
 	</head>
     <body>
         <main>
-			<header>
-				<Nav title="← return home" href="/" />
-				<div class="title">
-					<h1>projects →</h1>
-					<p class="description">Cool things I've worked on.</p>
-				</div>
-			</header>
+			<Header title="projects →" description="Cool things I've worked on." />
 			<article>
 				<p>...Coming soon!</p>
 			</article>

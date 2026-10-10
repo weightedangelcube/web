@@ -1,7 +1,7 @@
 ---
-import Nav from "../components/nav.astro";
 import "../styles/about.scss"
 import { Content } from "../../content/about.mdx"
+import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
@@ -19,13 +19,7 @@ import { Content } from "../../content/about.mdx"
 	</head>
     <body>
         <main>
-			<header>
-				<Nav title="← return home" href="/" />
-				<div class="title">
-					<h1>about →</h1>
-					<p class="description">Who even is this guy?</p>
-				</div>
-			</header>
+			<Header title="about →" description="Who even is this guy?" />
 			<article>
 				<Content />
 			</article>

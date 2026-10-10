@@ -1,9 +1,9 @@
 ---
 import { Content as Now } from "../../content/now.mdx"
 import { Content as NowPrev } from "../../content/now-prev.mdx"
-import Nav from "../components/nav.astro";
 import "../styles/now.scss"
 import LBPinned from "../components/preact/LBPinned";
+import Header from "../components/Header.astro";
 ---
 <!doctype html>
 <html lang="en-CA">
@@ -20,13 +20,7 @@ import LBPinned from "../components/preact/LBPinned";
 	</head>
     <body>
 		<main>
-			<header>
-				<Nav title="← return home" href="/" />
-				<div class="title">
-					<h1>now →</h1>
-					<p class="description">Recent thoughts, interests, activities.</p>
-				</div>
-			</header>
+			<Header title="now →" description="Recent thoughts, interests, activities." />
 			<article>
 				<section id="now">
 					<Now />

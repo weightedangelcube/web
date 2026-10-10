@@ -1,0 +1,34 @@
+header {
+    display: grid !important;
+    grid-template-columns: 1fr 15rem;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+        "nav nav"
+        "title title"
+        "title title";
+    row-gap: 40px;
+    margin-bottom: 5vh;
+
+    div.title {
+        grid-area: title;
+
+        h1 {
+            font-family: var(--font-heading);
+            font-weight: 300;
+            font-size: 6rem;
+            line-height: 1;
+            letter-spacing: -0.08em;
+        }
+
+        p.description {
+            margin: 0.5em 0;
+            opacity: 80%;
+        }
+    }
+}
+
+@media (max-width: 775px) {
+    header div.title h1 {
+        font-size: 4rem;
+    }
+}
