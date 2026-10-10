@@ -1,17 +1,17 @@
 ---
 import "../../styles/post.scss"
 import Nav from "../../components/Nav.astro"
-import { getCollection, render } from 'astro:content'
+import { getCollection, render } from "astro:content"
 
 export async function getStaticPaths() {
-    const posts = await getCollection("logbook")
-    return posts.map(post => ({
-        params: { id: post.id },
-        props: { post },
-    }))
+	const posts = await getCollection("logbook")
+	return posts.map((post) => ({
+		params: { id: post.id },
+		props: { post }
+	}))
 }
 
-const { post } = Astro.props;
+const { post } = Astro.props
 const { Content } = await render(post)
 ---
 
@@ -23,35 +23,47 @@ const { Content } = await render(post)
 		<meta name="viewport" content="width = device-width, initial-scale = 1" />
 		<title>{post.data.title} · a log by angelcube</title>
 
-        <!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
 	</head>
 
-    <body>
-        <main>
-            <header>
-                <Nav title="← back to logbook" href="/logbook" />
-                <div class="title">
-                    <div class="heading">
-                        <span class="type">{post.data.type}</span>
-                        <h1>{post.data.title}</h1>
-                        <p class="description">{post.data.description}</p>
-                    </div>
-                    <div class="published-date-meta">
-                        <span>Published</span>
-                        <span class="date">{post.data.published_date.toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
-                    </div>
-                    <div class="updated-date-meta">
-                        <span>Updated</span>
-                        <span class="date">{post.data.updated_date.toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
-                    </div>
-                </div>
-            </header>
-            <article>
-                <Content />
-            </article>
-        </main>
-    </body>
+	<body>
+		<main>
+			<header>
+				<Nav title="← back to logbook" href="/logbook" />
+				<div class="title">
+					<div class="heading">
+						<span class="type">{post.data.type}</span>
+						<h1>{post.data.title}</h1>
+						<p class="description">{post.data.description}</p>
+					</div>
+					<div class="published-date-meta">
+						<span>Published</span>
+						<span class="date">
+							{post.data.published_date.toLocaleString("en-CA", {
+								year: "numeric",
+								month: "long",
+								day: "numeric"
+							})}
+						</span>
+					</div>
+					<div class="updated-date-meta">
+						<span>Updated</span>
+						<span class="date">
+							{post.data.updated_date.toLocaleString("en-CA", {
+								year: "numeric",
+								month: "long",
+								day: "numeric"
+							})}
+						</span>
+					</div>
+				</div>
+			</header>
+			<article>
+				<Content />
+			</article>
+		</main>
+	</body>
 </html>

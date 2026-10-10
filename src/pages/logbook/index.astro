@@ -1,20 +1,17 @@
 ---
-import "../../styles/logbook.scss";
-import Header from "../../components/Header.astro";
-import { getCollection } from "astro:content";
-import { Temporal } from "temporal-polyfill";
+import "../../styles/logbook.scss"
+import Header from "../../components/Header.astro"
+import { getCollection } from "astro:content"
+import { Temporal } from "temporal-polyfill"
 
-type PostType = "Ramblings" | "Writings";
+type PostType = "Ramblings" | "Writings"
 
 async function getSortedPosts(type: PostType) {
 	return (
 		await getCollection("logbook", ({ data }) => {
-			return data.type === type;
+			return data.type === type
 		})
-	).sort(
-		(a: any, b: any) =>
-			Temporal.PlainDate.compare(b.data.published_date, a.data.published_date)
-	)
+	).sort((a: any, b: any) => Temporal.PlainDate.compare(b.data.published_date, a.data.published_date))
 }
 
 const writings = await getSortedPosts("Writings")
@@ -45,8 +42,16 @@ const ramblings = await getSortedPosts("Ramblings")
 			<ul class="post-list">
 				{writings.map((post: any) => (
 					<li>
-						<span class="post-title"><a href={`/logbook/${post.id}`}>{post.data.title}</a></span>
-						<span class="published-date">{post.data.published_date.toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
+						<span class="post-title">
+							<a href={`/logbook/${post.id}`}>{post.data.title}</a>
+						</span>
+						<span class="published-date">
+							{post.data.published_date.toLocaleString("en-CA", {
+								year: "numeric",
+								month: "long",
+								day: "numeric"
+							})}
+						</span>
 					</li>
 				))}
 			</ul>

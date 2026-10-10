@@ -2,19 +2,19 @@
 @use "lib/article";
 
 body {
-    background-color: var(--background-color);
-    font-family: var(--font-body);
-    color: var(--text-color);
+	background-color: var(--background-color);
+	font-family: var(--font-body);
+	color: var(--text-color);
 }
 
 main {
-    margin: 20px;
+	margin: 20px;
 }
 
 article {
-    @extend %article;
+	@extend %article;
 
-    section#also:not(:has(p)) {
-        display: none;
-    }
+	section#also:not(:has(p)) {
+		display: none;
+	}
 }

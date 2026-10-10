@@ -5,11 +5,11 @@ import { Temporal } from "temporal-polyfill"
 type PostType = "Ramblings" | "Writings"
 
 type Frontmatter = {
-    title: string,
-    description: string,
-    type: PostType,
-    published_date: string,
-    updated_date: string
+	title: string
+	description: string
+	type: PostType
+	published_date: string
+	updated_date: string
 }
 
 const frontmatter = Astro.props.frontmatter as Frontmatter
@@ -23,40 +23,52 @@ const frontmatter = Astro.props.frontmatter as Frontmatter
 		<meta name="viewport" content="width = device-width, initial-scale = 1" />
 		<title>{frontmatter.title} · a log by angelcube</title>
 
-        <!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
 	</head>
 
-    <body>
-        <main>
-            <header>
-                <nav>
-                    <span class="back">
-                        <a href="/logbook">← back to logbook</a>
-                    </span>
-                    <span class="name">angelcube ✦</span>
-                </nav>
-                <div class="title">
-                    <div class="heading">
-                        <span class="type">{frontmatter.type}</span>
-                        <h1>{frontmatter.title}</h1>
-                        <p class="description">{frontmatter.description}</p>
-                    </div>
-                    <div class="published-date-meta">
-                        <span>Written</span>
-                        <span class="date">{Temporal.PlainDate.from(frontmatter.published_date).toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
-                    </div>
-                    <div class="updated-date-meta">
-                        <span>Updated</span>
-                        <span class="date">{Temporal.PlainDate.from(frontmatter.updated_date).toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
-                    </div>
-                </div>
-            </header>
-            <article>
-                <slot />
-            </article>
-        </main>
-    </body>
+	<body>
+		<main>
+			<header>
+				<nav>
+					<span class="back">
+						<a href="/logbook">← back to logbook</a>
+					</span>
+					<span class="name">angelcube ✦</span>
+				</nav>
+				<div class="title">
+					<div class="heading">
+						<span class="type">{frontmatter.type}</span>
+						<h1>{frontmatter.title}</h1>
+						<p class="description">{frontmatter.description}</p>
+					</div>
+					<div class="published-date-meta">
+						<span>Written</span>
+						<span class="date">
+							{Temporal.PlainDate.from(frontmatter.published_date).toLocaleString("en-CA", {
+								year: "numeric",
+								month: "long",
+								day: "numeric"
+							})}
+						</span>
+					</div>
+					<div class="updated-date-meta">
+						<span>Updated</span>
+						<span class="date">
+							{Temporal.PlainDate.from(frontmatter.updated_date).toLocaleString("en-CA", {
+								year: "numeric",
+								month: "long",
+								day: "numeric"
+							})}
+						</span>
+					</div>
+				</div>
+			</header>
+			<article>
+				<slot />
+			</article>
+		</main>
+	</body>
 </html>

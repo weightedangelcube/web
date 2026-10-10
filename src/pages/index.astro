@@ -1,7 +1,8 @@
 ---
 import "../styles/index.scss"
-import NowPlaying from "../components/preact/NowPlaying";
+import NowPlaying from "../components/preact/NowPlaying"
 ---
+
 <!doctype html>
 <html lang="en-CA">
 	<head>
@@ -10,26 +11,29 @@ import NowPlaying from "../components/preact/NowPlaying";
 		<meta name="viewport" content="width = device-width, initial-scale = 1" />
 		<title>angelcube</title>
 
-        <!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
 	</head>
-    <body>
+	<body>
 		<NowPlaying client:only="preact" />
-        <main>
+		<main>
 			<header>
 				<picture>
-					<source srcset="/img/header-dark.png" media="(prefers-color-scheme: dark)">
-					<img alt="A pixelated, artistic rendition of Angel. He has short, messy dark hair, round-framed 
+					<source srcset="/img/header-dark.png" media="(prefers-color-scheme: dark)" />
+					<img
+						alt="A pixelated, artistic rendition of Angel. He has short, messy dark hair, round-framed 
 							  glasses, and is wearing a cropped T-shirt, jacket, shorts, and sneakers. Above him is a 
 							  melting halo, and behind him is a pair of angel wings. Four Angels in varying positions 
-							  are depicted." src="/img/header-light.png">
+							  are depicted."
+						src="/img/header-light.png"
+					/>
 				</picture>
 
 				<div class="title">
 					<h1>angelcube ✦</h1>
-					<p>The digital garden of computer human Angel Wang. </p>
+					<p>The digital garden of computer human Angel Wang.</p>
 				</div>
 				<nav>
 					<ul>
@@ -63,10 +67,10 @@ import NowPlaying from "../components/preact/NowPlaying";
 					<a href="/now">Check out what she's been up to recently →</a>
 				</article>
 				<picture>
-					<source srcset="/img/laptop-dark.png" media="(prefers-color-scheme: dark)">
-					<img alt="Angel lying on her front typing at a laptop." src="/img/laptop-light.png">
+					<source srcset="/img/laptop-dark.png" media="(prefers-color-scheme: dark)" />
+					<img alt="Angel lying on her front typing at a laptop." src="/img/laptop-light.png" />
 				</picture>
 			</section>
 		</main>
-    </body>
+	</body>
 </html>

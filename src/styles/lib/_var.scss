@@ -1,14 +1,14 @@
 @use "font.scss";
 
 :root {
-    color-scheme: light dark;
-    
-    --width: 1125px;
-    --font-heading: 'PP Neue Machina Inktrap Variable', sans-serif;
-    --font-body: 'PP Telegraf Variable', sans-serif;
-	--font-tnum: 'Inter Variable', sans-serif;
-    --font-code: 'IBM Plex Mono Variable', monospace;
-    --font-scale: 1em;
+	color-scheme: light dark;
+
+	--width: 1125px;
+	--font-heading: "PP Neue Machina Inktrap Variable", sans-serif;
+	--font-body: "PP Telegraf Variable", sans-serif;
+	--font-tnum: "Inter Variable", sans-serif;
+	--font-code: "IBM Plex Mono Variable", monospace;
+	--font-scale: 1em;
 
 	--background-color: light-dark(#faf4ed, #0a0a0a);
 	--foreground-color: light-dark(#f2e9e1, #1b1a1a);
@@ -21,26 +21,93 @@
 	--blockquote-color: light-dark(#dcdfe6, #373434);
 }
 
-
 // every website gotta have one of these
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -49,22 +116,35 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
 body {
 	line-height: 1;
 }
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
 	content: none;
 }
 table {
@@ -72,11 +152,10 @@ table {
 	border-spacing: 0;
 }
 
-
 // safari compatibility (I HATE YOU)
 // https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-variation-settings#browser_compatibility
 * {
-	font-variation-settings: 'slnt' 0;
+	font-variation-settings: "slnt" 0;
 }
 
 *::selection {

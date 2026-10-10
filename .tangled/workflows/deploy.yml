@@ -1,23 +1,23 @@
 when:
-  - event: ["push"]
-    branch: ["main"]
+    - event: ["push"]
+      branch: ["main"]
 
 engine: "microvm"
 image: "nixos"
 
 dependencies:
-  - nodejs_26
-  - lilypond
+    - nodejs_26
+    - lilypond
 
 steps:
-  - name: "install dependencies"
-    command: npm ci
-  - name: "build"
-    command: npm run build
-  - name: "deploy"
-    command: "npx wrangler deploy --message \"$(git log -1 --pretty=%B)\""
-    environment:
-      NODE_ENV: "production"
-      # Tangled UI renders ANSI colour codes as raw text
-      NO_COLOR: "true"
-      DO_NOT_TRACK: 1
+    - name: "install dependencies"
+      command: npm ci
+    - name: "build"
+      command: npm run build
+    - name: "deploy"
+      command: 'npx wrangler deploy --message "$(git log -1 --pretty=%B)"'
+      environment:
+          NODE_ENV: "production"
+          # Tangled UI renders ANSI colour codes as raw text
+          NO_COLOR: "true"
+          DO_NOT_TRACK: 1

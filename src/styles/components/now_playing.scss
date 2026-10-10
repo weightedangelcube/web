@@ -1,50 +1,50 @@
 div#now-playing-wrapper {
-    background-color: var(--text-color);
-    color: var(--background-color);
-    font-family: var(--font-code);
+	background-color: var(--text-color);
+	color: var(--background-color);
+	font-family: var(--font-code);
 
-    overflow: hidden;
-    width: 100%;
+	overflow: hidden;
+	width: 100%;
 
-    div#now-playing {
-        display: flex;
-        width: max-content;
-        animation: marquee 100s linear infinite;
+	div#now-playing {
+		display: flex;
+		width: max-content;
+		animation: marquee 100s linear infinite;
 
-        span {
-            flex-shrink: 0;
-            padding: 0.4em;
-            line-height: 1.2;
-            white-space: nowrap;
+		span {
+			flex-shrink: 0;
+			padding: 0.4em;
+			line-height: 1.2;
+			white-space: nowrap;
 
-            a {
-                color: var(--background-color);
-            }
-        }
+			a {
+				color: var(--background-color);
+			}
+		}
 
-        &:hover {
-            animation-play-state: paused;
-        }
-    }
+		&:hover {
+			animation-play-state: paused;
+		}
+	}
 }
 
 @keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
 }
 
 @media (max-width: 775px) {
-    div#now-playing-wrapper div#now-playing {
-        animation: marquee 60s linear infinite;
-    }
+	div#now-playing-wrapper div#now-playing {
+		animation: marquee 60s linear infinite;
+	}
 }
 
 @media (max-width: 575px) {
-    div#now-playing-wrapper div#now-playing {
-        animation: marquee 20s linear infinite;
-    }
+	div#now-playing-wrapper div#now-playing {
+		animation: marquee 20s linear infinite;
+	}
 }

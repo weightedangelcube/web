@@ -1,8 +1,8 @@
 {
-    "name": "angelcube-dev",
-    "compatibility_date": "2026-10-09",
-    "assets": {
-        "directory": "./dist"
-    },
-    "preview_urls": true
+	"name": "angelcube-dev",
+	"compatibility_date": "2026-10-09",
+	"assets": {
+		"directory": "./dist"
+	},
+	"preview_urls": true
 }

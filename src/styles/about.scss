@@ -2,38 +2,38 @@
 @use "lib/article";
 
 body {
-    background-color: var(--background-color);
-    font-family: var(--font-body);
-    color: var(--text-color);
+	background-color: var(--background-color);
+	font-family: var(--font-body);
+	color: var(--text-color);
 }
 
 main {
-    margin: 20px;
+	margin: 20px;
 }
 
 article {
-    @extend %article;
+	@extend %article;
 
-    h2 {
-        font-size: 2.5rem;
-    }
+	h2 {
+		font-size: 2.5rem;
+	}
 
-    // ul:has(a) {
-    //     list-style: "⁃ ";
+	// ul:has(a) {
+	//     list-style: "⁃ ";
 
-    //     a {
-    //         // font-family: var(--font-heading);
-    //         // text-transform: uppercase;
-    //         font-size: 1.125rem;
-    //         color: var(--text-color)
-    //     }
-    // }
+	//     a {
+	//         // font-family: var(--font-heading);
+	//         // text-transform: uppercase;
+	//         font-size: 1.125rem;
+	//         color: var(--text-color)
+	//     }
+	// }
 }
 
 @media (max-width: 775px) {
-    article {
-        h1 {
-            font-size: 2rem;
-        }
-    }
+	article {
+		h1 {
+			font-size: 2rem;
+		}
+	}
 }

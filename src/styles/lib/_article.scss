@@ -1,104 +1,103 @@
 %article {
-    line-height: 1.5;
-    margin: 0 20vw;
-    margin-bottom: 80px;
+	line-height: 1.5;
+	margin: 0 20vw;
+	margin-bottom: 80px;
 
-    h2 {
-        line-height: initial;
-        font-family: var(--font-heading);
-        font-weight: 350;
-        font-size: 3rem;
-        letter-spacing: -0.06em;
-    }
+	h2 {
+		line-height: initial;
+		font-family: var(--font-heading);
+		font-weight: 350;
+		font-size: 3rem;
+		letter-spacing: -0.06em;
+	}
 
-    h3 {
-        opacity: 65%;
-        font-family: var(--font-code);
-        font-size: 1.25rem;
-        margin-bottom: 0.2em;
-        text-transform: uppercase;
-    }
+	h3 {
+		opacity: 65%;
+		font-family: var(--font-code);
+		font-size: 1.25rem;
+		margin-bottom: 0.2em;
+		text-transform: uppercase;
+	}
 
-    blockquote {
-        border-left: 5px solid color-mix(in srgb, var(--text-color), transparent 90%);
-        padding-left: 20px;
-        color: color-mix(in srgb, var(--text-color), transparent 30%);
+	blockquote {
+		border-left: 5px solid color-mix(in srgb, var(--text-color), transparent 90%);
+		padding-left: 20px;
+		color: color-mix(in srgb, var(--text-color), transparent 30%);
 
-        // no bottom margins within blockquotes
-        p:not(:last-child) {
-            margin-bottom: 0
-        }
-    }
+		// no bottom margins within blockquotes
+		p:not(:last-child) {
+			margin-bottom: 0;
+		}
+	}
 
-    ol {
-        list-style: numbered;
-        
-        li {
-            font-size: 1.5rem;
-            // font-family: var(--font-heading);
+	ol {
+		list-style: numbered;
 
-            &::marker {
-                
-                font-family: 'Inter Variable'
-            }
-        }
-    }
+		li {
+			font-size: 1.5rem;
+			// font-family: var(--font-heading);
 
-    p {
-        margin-bottom: 1em;
-    }
+			&::marker {
+				font-family: "Inter Variable";
+			}
+		}
+	}
 
-    em {
-        // this is precise because I'm trying to meet APCA
-        color: color-mix(in srgb, var(--text-color), transparent 29%); 
-        font-variation-settings: 'slnt' 30;
-    }
+	p {
+		margin-bottom: 1em;
+	}
 
-    strong, em > strong {
-        color: var(--text-color);
-        font-weight: 600;
-    }
+	em {
+		// this is precise because I'm trying to meet APCA
+		color: color-mix(in srgb, var(--text-color), transparent 29%);
+		font-variation-settings: "slnt" 30;
+	}
 
-    a {
-        color: var(--text-color);
-    }
+	strong,
+	em > strong {
+		color: var(--text-color);
+		font-weight: 600;
+	}
 
-    small {
-        color: color-mix(in srgb, var(--text-color), transparent 30%);
-        font-size: 0.8em;
-    }
+	a {
+		color: var(--text-color);
+	}
 
-    pre:has(code) {
-        border-radius: 5px;
-        font-family: var(--font-code);
-        padding: 2rem;
-        background-color: var(--foreground-color) !important;
-        color: var(--text-color) !important;
-    }
+	small {
+		color: color-mix(in srgb, var(--text-color), transparent 30%);
+		font-size: 0.8em;
+	}
 
-    hr {
-        margin: 3rem auto 2rem auto;
-        width: 60%;
-        opacity: 65%;
-    }
+	pre:has(code) {
+		border-radius: 5px;
+		font-family: var(--font-code);
+		padding: 2rem;
+		background-color: var(--foreground-color) !important;
+		color: var(--text-color) !important;
+	}
 
-    @media (max-width: 775px) {
-        & {
-            margin-left: 0;
-            margin-right: 0;
-        }
-    }
+	hr {
+		margin: 3rem auto 2rem auto;
+		width: 60%;
+		opacity: 65%;
+	}
 
-    @media (max-width: 515px) {
-        h2 {
-            font-size: 2.5rem;
-        }
-    }
+	@media (max-width: 775px) {
+		& {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
 
+	@media (max-width: 515px) {
+		h2 {
+			font-size: 2.5rem;
+		}
+	}
 }
 
 @counter-style numbered {
-    system: extends decimal;
-    pad: 2 "0";
-    suffix: " − ";
+	system: extends decimal;
+	pad: 2 "0";
+	suffix: " − ";
 }

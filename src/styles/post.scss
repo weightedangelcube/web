@@ -2,113 +2,112 @@
 @use "lib/article";
 
 body {
-    background-color: var(--background-color);
-    font-family: var(--font-body);
-    color: var(--text-color);
+	background-color: var(--background-color);
+	font-family: var(--font-body);
+	color: var(--text-color);
 }
 
 main {
-    margin: 20px;
+	margin: 20px;
 }
 
 header {
-    display: grid;
-    grid-template-columns: 1fr 15rem;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-        "nav nav"
-        "title title"
-        "title title";
-    row-gap: 40px;
-    margin-bottom: 10vh;
+	display: grid;
+	grid-template-columns: 1fr 15rem;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:
+		"nav nav"
+		"title title"
+		"title title";
+	row-gap: 40px;
+	margin-bottom: 10vh;
 
-    div.title {
-        grid-area: title;
-        display: grid;
-        grid-template-columns: subgrid;
-        grid-template-rows: subgrid;
-        grid-template-areas:
-            "heading published-date-meta"
-            "heading updated-date-meta";
+	div.title {
+		grid-area: title;
+		display: grid;
+		grid-template-columns: subgrid;
+		grid-template-rows: subgrid;
+		grid-template-areas:
+			"heading published-date-meta"
+			"heading updated-date-meta";
 
-        align-items: end;
-        
-        div.heading {
-            grid-area: heading;
+		align-items: end;
 
-            span.type {
-                font-family: var(--font-code);
-                opacity: 65%;
-                text-transform: uppercase;
-                display: block;
-                margin-bottom: 0.25em;
-            }
-            
-            h1 {
-                font-family: var(--font-heading);
-                font-weight: 300;
-                font-size: 4.5rem;
-                line-height: 1;
-                letter-spacing: -0.08em;
-            }
+		div.heading {
+			grid-area: heading;
 
-            p.description {
-                opacity: 80%;
-            }
-        }
+			span.type {
+				font-family: var(--font-code);
+				opacity: 65%;
+				text-transform: uppercase;
+				display: block;
+				margin-bottom: 0.25em;
+			}
 
-        div.published-date-meta {
-            grid-area: published-date-meta;
-        }
-        
-        div.updated-date-meta {
-            grid-area: updated-date-meta;
-        }
+			h1 {
+				font-family: var(--font-heading);
+				font-weight: 300;
+				font-size: 4.5rem;
+				line-height: 1;
+				letter-spacing: -0.08em;
+			}
 
+			p.description {
+				opacity: 80%;
+			}
+		}
 
-        div.published-date-meta, div.updated-date-meta {
-            span {
-                display: block;
-            }
+		div.published-date-meta {
+			grid-area: published-date-meta;
+		}
 
-            span.date {
-                font-family: var(--font-heading);
-                font-weight: 300;
-            }
+		div.updated-date-meta {
+			grid-area: updated-date-meta;
+		}
 
-            span:not(.date) {
-                font-family: var(--font-code);
-                text-transform: uppercase;
-                opacity: 65%;
-                margin-bottom: 0.25em;
-            }
-        }
+		div.published-date-meta,
+		div.updated-date-meta {
+			span {
+				display: block;
+			}
 
-    }
+			span.date {
+				font-family: var(--font-heading);
+				font-weight: 300;
+			}
+
+			span:not(.date) {
+				font-family: var(--font-code);
+				text-transform: uppercase;
+				opacity: 65%;
+				margin-bottom: 0.25em;
+			}
+		}
+	}
 }
 
 article {
-    @extend %article;
+	@extend %article;
 }
 
 @media (max-width: 775px) {
-    header {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+	header {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
 
-        div.title {
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            row-gap: 1rem;
-            grid-template-areas:
-                "heading"
-                "heading"
-                "published-date-meta"
-                "updated-date-meta";
+		div.title {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			row-gap: 1rem;
+			grid-template-areas:
+				"heading"
+				"heading"
+				"published-date-meta"
+				"updated-date-meta";
 
-            div.heading h1 {
-                font-size: 3.5rem;
-            }
-        }
-    }
+			div.heading h1 {
+				font-size: 3.5rem;
+			}
+		}
+	}
 }
