@@ -11,7 +11,7 @@ environment:
 dependencies:
   - nodejs_26
   - lilypond
-  - steam-run
+  - steam-run-free
 
 steps:
   - name: "install dependencies"
