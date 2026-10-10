@@ -1,0 +1,33 @@
+@use "lib/var";
+@use 'sass:math';
+
+body {
+    background-color: var(--background-color);
+    font-family: var(--font-body);
+    color: var(--text-color);
+}
+
+main {
+    margin: 20px;
+}
+
+
+section.stickers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    justify-items: center; 
+
+    img {
+        max-width: 15rem;
+        max-height: 20rem;
+    }
+}
+
+// @media (max-width: 505px) {
+//     section.stickers img {
+//         max-width: 8rem;
+//         max-height: 10rem;
+//     }
+// }

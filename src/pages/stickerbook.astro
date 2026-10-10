@@ -1,0 +1,39 @@
+---
+import "../styles/stickerbook.scss"
+import Header from "../components/Header.astro";
+---
+
+<!doctype html>
+<html lang="en-CA">
+	<head>
+		<!-- Important metadata, and the like -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width = device-width, initial-scale = 1" />
+		<title>sticker book · angelcube</title>
+
+        <!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
+	</head>
+    <body>
+        <main>
+			<Header title="sticker book" description="Free for the taking!" />
+			<section class="stickers">
+                <img src="/img/stickerbook/amethyst.png" alt="Amethyst from Steven Universe">
+                <img src="/img/stickerbook/garnet.png" alt="Garnet from Steven Universe">
+                <img src="/img/stickerbook/pearl.png" alt="Pearl from Steven Universe">
+                <img src="/img/stickerbook/steven.png" alt="Steven from Steven Universe">
+                <img src="/img/stickerbook/medic.png" alt="Medic from Team Fortress 2">
+                <img src="/img/stickerbook/chell.png" alt="Chell from Portal 2">
+            </section>
+		</main>
+    </body>
+
+    <script>
+        const stickers = document.querySelectorAll("img")
+        stickers.forEach(sticker => {
+            sticker!.style.rotate = ((Math.random() * 20) - 10) + "deg"
+        })
+    </script>
+</html>
