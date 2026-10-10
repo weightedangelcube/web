@@ -1,6 +1,6 @@
 ---
+import "../../styles/logbook.scss";
 import Header from "../../components/Header.astro";
-import "../../styles/journal.scss";
 import { getCollection } from "astro:content";
 import { Temporal } from "temporal-polyfill";
 
@@ -8,7 +8,7 @@ type PostType = "Ramblings" | "Writings";
 
 async function getSortedPosts(type: PostType) {
 	return (
-		await getCollection("journal", ({ data }) => {
+		await getCollection("logbook", ({ data }) => {
 			return data.type === type;
 		})
 	).sort(
@@ -27,7 +27,7 @@ const ramblings = await getSortedPosts("Ramblings")
 		<!-- Important metadata, and the like -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width = device-width, initial-scale = 1" />
-		<title>journal · angelcube</title>
+		<title>logbook · angelcube</title>
 
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -37,15 +37,15 @@ const ramblings = await getSortedPosts("Ramblings")
 
 	<body>
 		<main>
-			<Header title="journal →" description="Words I wanted to say." />
+			<Header title="logbook →" description="Words I wanted to say." />
 			<p class="warning">
 				<strong>Tread lightly—</strong>much of my poetry deals in themes such as love, loss, and other brave
-				forms of darkness. Check in with yourself before going on, and touch faith—
+				forms of darkness. Check in with yourself, then go forth and touch faith—
 			</p>
 			<ul class="post-list">
 				{writings.map((post: any) => (
 					<li>
-						<span class="post-title"><a href={`/journal/${post.id}`}>{post.data.title}</a></span>
+						<span class="post-title"><a href={`/logbook/${post.id}`}>{post.data.title}</a></span>
 						<span class="published-date">{post.data.published_date.toLocaleString("en-CA", {year: "numeric", month: "long", day: "numeric"})}</span>
 					</li>
 				))}

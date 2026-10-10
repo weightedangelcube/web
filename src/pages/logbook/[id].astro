@@ -1,10 +1,10 @@
 ---
-import Nav from "../../components/Nav.astro"
 import "../../styles/post.scss"
+import Nav from "../../components/Nav.astro"
 import { getCollection, render } from 'astro:content'
 
 export async function getStaticPaths() {
-    const posts = await getCollection("journal")
+    const posts = await getCollection("logbook")
     return posts.map(post => ({
         params: { id: post.id },
         props: { post },
@@ -21,7 +21,7 @@ const { Content } = await render(post)
 		<!-- Important metadata, and the like -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width = device-width, initial-scale = 1" />
-		<title>{post.data.title} · a journal by angelcube</title>
+		<title>{post.data.title} · a log by angelcube</title>
 
         <!-- Favicon -->
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -32,7 +32,7 @@ const { Content } = await render(post)
     <body>
         <main>
             <header>
-                <Nav title="← back to journal" href="/journal" />
+                <Nav title="← back to logbook" href="/logbook" />
                 <div class="title">
                     <div class="heading">
                         <span class="type">{post.data.type}</span>

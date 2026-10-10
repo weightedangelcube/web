@@ -29,7 +29,7 @@ pnpm-debug.log*
 .vscode/
 
 # angel's test journal file
-content/journal/test.mdx
+content/logbook/test.mdx
 # Local Netlify folder
 .netlify
 

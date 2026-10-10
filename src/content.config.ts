@@ -3,8 +3,8 @@ import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { Temporal } from "temporal-polyfill";
 
-const journal = defineCollection({
-    loader: glob({ base: "./content/journal", pattern: "**/*.{md,mdx}" }),
+const logbook = defineCollection({
+    loader: glob({ base: "./content/logbook", pattern: "**/*.{md,mdx}" }),
     schema: z.object({
         title: z.string(),
         description: z.string(),
@@ -14,4 +14,4 @@ const journal = defineCollection({
     }),
 })
 
-export const collections = { journal }
+export const collections = { logbook }
