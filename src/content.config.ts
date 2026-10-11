@@ -8,7 +8,7 @@ const logbook = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		type: z.enum(["Writings", "Ramblings"]),
+		collection: z.string().optional(),
 		published_date: z.string().transform((value) => Temporal.PlainDate.from(value)),
 		updated_date: z.string().transform((value) => Temporal.PlainDate.from(value))
 	})

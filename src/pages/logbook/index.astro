@@ -4,18 +4,24 @@ import Header from "../../components/Header.astro"
 import { getCollection } from "astro:content"
 import { Temporal } from "temporal-polyfill"
 
-type PostType = "Ramblings" | "Writings"
+const sortDate = (a: any, b: any) => Temporal.PlainDate.compare(b.data.published_date, a.data.published_date)
 
-async function getSortedPosts(type: PostType) {
-	return (
-		await getCollection("logbook", ({ data }) => {
-			return data.type === type
-		})
-	).sort((a: any, b: any) => Temporal.PlainDate.compare(b.data.published_date, a.data.published_date))
-}
+const entries = await getCollection("logbook")
 
-const writings = await getSortedPosts("Writings")
-const ramblings = await getSortedPosts("Ramblings")
+const collections = entries
+	.filter((entry) => entry.data.collection)
+	.sort(sortDate)
+	.reduce(
+		(acc, entry) => {
+			const collection = entry.data.collection!
+			if (!acc[collection]) acc[collection] = []
+			acc[collection].push(entry)
+			return acc
+		},
+		{} as Record<string, typeof entries>
+	)
+
+const misc = entries.filter((entry) => !entry.data.collection).sort(sortDate)
 ---
 
 <!doctype html>
@@ -39,22 +45,49 @@ const ramblings = await getSortedPosts("Ramblings")
 				<strong>Tread lightly—</strong>much of my poetry deals in themes such as love, loss, and other brave
 				forms of darkness. Check in with yourself, then go forth and touch faith—
 			</p>
-			<ul class="post-list">
-				{writings.map((post: any) => (
-					<li>
-						<span class="post-title">
-							<a href={`/logbook/${post.id}`}>{post.data.title}</a>
-						</span>
-						<span class="published-date">
-							{post.data.published_date.toLocaleString("en-CA", {
-								year: "numeric",
-								month: "long",
-								day: "numeric"
-							})}
-						</span>
-					</li>
+			<section class="posts">
+				<ul class="post-list">
+					{misc.map((post: any) => (
+						<li>
+							<span class="post-title">
+								<a href={`/logbook/${post.id}`}>{post.data.title}</a>
+							</span>
+							<span class="published-date">
+								{post.data.published_date.toLocaleString("en-CA", {
+									year: "numeric",
+									month: "long",
+									day: "numeric"
+								})}
+							</span>
+						</li>
+					))}
+				</ul>
+			</section>
+			<section class="posts">
+				<h2>collections</h2>
+				{Object.entries(collections).map(([collectionName, entries]) => (
+					<>
+						<h3>{collectionName}</h3>
+
+						<ul class="post-list">
+							{entries.map((entry: any) => (
+								<li>
+									<span class="post-title">
+										<a href={`/logbook/${entry.id}`}>{entry.data.title}</a>
+									</span>
+									<span class="published-date">
+										{entry.data.published_date.toLocaleString("en-CA", {
+											year: "numeric",
+											month: "long",
+											day: "numeric"
+										})}
+									</span>
+								</li>
+							))}
+						</ul>
+					</>
 				))}
-			</ul>
+			</section>
 		</main>
 	</body>
 </html>
