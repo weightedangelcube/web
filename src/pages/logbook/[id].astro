@@ -1,7 +1,7 @@
 ---
 import "../../styles/post.scss"
-import Nav from "../../components/Nav.astro"
 import { getCollection, render } from "astro:content"
+import Nav from "../../components/Nav.astro"
 
 export async function getStaticPaths() {
 	const posts = await getCollection("logbook")

@@ -1,8 +1,8 @@
 ---
 import "../../styles/logbook.scss"
-import Header from "../../components/Header.astro"
 import { getCollection } from "astro:content"
 import { Temporal } from "temporal-polyfill"
+import Header from "../../components/Header.astro"
 
 const sortDate = (a: any, b: any) => Temporal.PlainDate.compare(b.data.published_date, a.data.published_date)
 
@@ -13,6 +13,7 @@ const collections = entries
 	.sort(sortDate)
 	.reduce(
 		(acc, entry) => {
+			// biome-ignore lint/style/noNonNullAssertion: I already filtered for it idiot
 			const collection = entry.data.collection!
 			if (!acc[collection]) acc[collection] = []
 			acc[collection].push(entry)

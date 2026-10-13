@@ -17,7 +17,6 @@
 		"@lucide/astro": "^1.28.0",
 		"astro": "^7.3.8",
 		"astro-lilypond": "^0.16.1",
-		"lucide-react": "^1.0.1",
 		"preact": "^10.29.8",
 		"react-dom": "^19.2.4",
 		"sass": "^1.103.1",
@@ -32,7 +31,6 @@
 		"unix-dgram": true
 	},
 	"devDependencies": {
-		"prettier": "^3.9.10",
-		"prettier-plugin-astro": "^1.1.1"
+		"@biomejs/biome": "2.5.15"
 	}
 }

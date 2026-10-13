@@ -26,7 +26,9 @@ export default function LBPinned() {
 			if (!rq.ok) return
 			const track = (await rq
 				.json()
-				.then((json) => (json.pinned_recording ? json.pinned_recording.track_metadata : null))) as TrackMetadata
+				.then((json: any) =>
+					json.pinned_recording ? json.pinned_recording.track_metadata : null
+				)) as TrackMetadata
 			if (!track) return
 
 			setData(track)

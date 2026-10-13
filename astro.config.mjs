@@ -1,16 +1,14 @@
 import { Temporal } from "temporal-polyfill"
+
 globalThis.Temporal ??= Temporal
 
-// @ts-check
-import { defineConfig } from "astro/config"
+import cloudflare from "@astrojs/cloudflare"
 
 import mdx from "@astrojs/mdx"
-
-import lilypond from "astro-lilypond"
-
 import preact from "@astrojs/preact"
-
-import cloudflare from "@astrojs/cloudflare"
+// @ts-check
+import { defineConfig } from "astro/config"
+import lilypond from "astro-lilypond"
 
 // https://astro.build/config
 export default defineConfig({

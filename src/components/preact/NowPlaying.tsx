@@ -1,5 +1,5 @@
-import SteamNowPlaying from "./SteamNowPlaying"
 import LBNowPlaying from "./LBNowPlaying"
+import SteamNowPlaying from "./SteamNowPlaying"
 import "../../styles/components/now_playing.scss"
 
 const REPEATS = 8

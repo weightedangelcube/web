@@ -1,5 +1,5 @@
-import type { APIRoute } from "astro"
 import { env } from "cloudflare:workers"
+import type { APIRoute } from "astro"
 
 export const prerender = false
 const STEAM_ID = "76561199245582776"
@@ -24,7 +24,7 @@ export const GET = (async () => {
 		`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${env.STEAM_API_KEY}&steamids=${STEAM_ID}`
 	).then((json) => json?.response?.players[0])
 
-	if (!res || !res.gameextrainfo) {
+	if (!res?.gameextrainfo) {
 		return new Response(null, {
 			status: 204,
 			statusText: "No data"

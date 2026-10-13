@@ -86,7 +86,7 @@ export default function LBNowPlaying() {
 }
 
 function MaybeLink({ href, children }: { href?: string; children: any }) {
-	return href ? <a href={href}>{children}</a> : <>{children}</>
+	return href ? <a href={href}>{children}</a> : children
 }
 
 function ArtistCredits({ artists }: { artists: ArtistCredit[] }) {
