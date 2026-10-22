@@ -35,9 +35,8 @@ const { Content } = await render(post)
 				<Nav title="← back to logbook" href="/logbook" />
 				<div class="title">
 					<div class="heading">
-						<span class="type">{post.data.type}</span>
 						<h1>{post.data.title}</h1>
-						<p class="description">{post.data.description}</p>
+						<p class="description">[{post.data.description}]</p>
 					</div>
 					<div class="published-date-meta">
 						<span>Published</span>

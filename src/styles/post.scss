@@ -36,14 +36,6 @@ header {
 		div.heading {
 			grid-area: heading;
 
-			span.type {
-				font-family: var(--font-code);
-				opacity: 65%;
-				text-transform: uppercase;
-				display: block;
-				margin-bottom: 0.25em;
-			}
-
 			h1 {
 				font-family: var(--font-heading);
 				font-weight: 300;
@@ -54,6 +46,7 @@ header {
 
 			p.description {
 				opacity: 80%;
+				// margin-bottom: 0.5rem;
 			}
 		}
 
