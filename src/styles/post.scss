@@ -45,7 +45,7 @@ header {
 			}
 
 			p.description {
-				opacity: 80%;
+				color: var(--subtext0-color);
 				// margin-bottom: 0.5rem;
 			}
 		}
@@ -72,7 +72,7 @@ header {
 			span:not(.date) {
 				font-family: var(--font-code);
 				text-transform: uppercase;
-				opacity: 65%;
+				color: var(--subtext1-color);
 				margin-bottom: 0.25em;
 			}
 		}

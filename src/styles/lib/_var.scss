@@ -15,19 +15,19 @@
 	--title-color: light-dark(#242424, #d3cbbb);
 	--heading-color: light-dark(#242424, #d3cbbb);
 	--text-color: light-dark(#212720, #d3cbbb);
+	--subtext1-color: color-mix(in srgb, var(--text-color), transparent 35%);
+	--subtext0-color: color-mix(in srgb, var(--text-color), transparent 20%);
 	--link-color: light-dark(#242424, #d3cbbb);
 	--visited-color: light-dark(#242424, #d3cbbb);
 	--code-background-color: light-dark(#dcdfe6, #373434);
 	--blockquote-color: light-dark(#dcdfe6, #373434);
 }
 
-// every website gotta have one of these
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
-
-// biome-ignore-start
+/* malva-ignore */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,6 +49,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+/* malva-ignore */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -62,6 +63,7 @@ ol, ul {
 blockquote, q {
 	quotes: none;
 }
+/* malva-ignore */
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
@@ -71,7 +73,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-// biome-ignore-end
 
 // safari compatibility (I HATE YOU)
 // https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-variation-settings#browser_compatibility
