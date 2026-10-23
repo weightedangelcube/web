@@ -1,5 +1,5 @@
-import { env } from "cloudflare:workers"
 import type { APIRoute } from "astro"
+import { env } from "cloudflare:workers"
 
 export const prerender = false
 const STEAM_ID = "76561199245582776"

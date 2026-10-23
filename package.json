@@ -1,7 +1,7 @@
 {
 	"name": "web",
-	"type": "module",
 	"version": "fw26",
+	"type": "module",
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
@@ -23,14 +23,14 @@
 		"temporal-polyfill": "^0.3.2",
 		"wrangler": "^4.149.0"
 	},
+	"devDependencies": {
+		"dprint": "^0.64.2"
+	},
 	"allowScripts": {
 		"esbuild": true,
 		"@parcel/watcher": true,
 		"sharp": true,
 		"netlify-cli": true,
 		"unix-dgram": true
-	},
-	"devDependencies": {
-		"@biomejs/biome": "2.5.15"
 	}
 }

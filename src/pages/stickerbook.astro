@@ -3,7 +3,7 @@ import "../styles/stickerbook.scss"
 import Header from "../components/Header.astro"
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-CA">
 	<head>
 		<!-- Important metadata, and the like -->
@@ -31,9 +31,9 @@ import Header from "../components/Header.astro"
 	</body>
 
 	<script>
-		const stickers = document.querySelectorAll("img")
-		stickers.forEach((sticker) => {
-			sticker!.style.rotate = Math.random() * 20 - 10 + "deg"
-		})
+	const stickers = document.querySelectorAll("img")
+	stickers.forEach((sticker) => {
+		sticker!.style.rotate = Math.random() * 20 - 10 + "deg"
+	})
 	</script>
 </html>
