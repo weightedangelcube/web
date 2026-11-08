@@ -14,6 +14,18 @@ main {
 article {
 	@extend %article;
 
+	section#now-prev {
+		h2 {
+			font-size: 2.5rem;
+		}
+
+		@media (max-width: 515px) {
+			h2 {
+				font-size: 2rem;
+			}
+		}
+	}
+
 	section#also:not(:has(p)) {
 		display: none;
 	}
