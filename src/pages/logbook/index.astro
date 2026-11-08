@@ -1,6 +1,6 @@
 ---
 import "../../styles/logbook.scss"
-import { getCollection } from "astro:content"
+import { getCollection, render } from "astro:content"
 import { Temporal } from "temporal-polyfill"
 import Header from "../../components/Header.astro"
 
@@ -11,9 +11,9 @@ const entries = await getCollection("logbook")
 const collections = entries
 	.filter((entry) => entry.data.collection)
 	.sort(sortDate)
+	.reverse()
 	.reduce(
 		(acc, entry) => {
-			// biome-ignore lint/style/noNonNullAssertion: I already filtered for it idiot
 			const collection = entry.data.collection!
 			if (!acc[collection]) acc[collection] = []
 			acc[collection].push(entry)
@@ -41,27 +41,45 @@ const misc = entries.filter((entry) => !entry.data.collection).sort(sortDate)
 
 	<body>
 		<main>
-			<Header title="logbook →" description="Words I wanted to say." />
-			<p class="warning">
+			<Header title="logbook →" description="Infinite grief fountain." />
+			<!-- <p class="warning">
 				<strong>Tread lightly—</strong>much of my poetry deals in themes such as love, loss, and other brave
 				forms of darkness. Check in with yourself, then go forth and touch faith—
-			</p>
+			</p> -->
 			<section class="posts">
 				<ul class="post-list">
-					{misc.map((post: any) => (
-						<li>
-							<span class="post-title">
-								<a href={`/logbook/${post.id}`}>{post.data.title}</a>
-							</span>
-							<span class="published-date">
-								{post.data.published_date.toLocaleString("en-CA", {
-									year: "numeric",
-									month: "long",
-									day: "numeric"
-								})}
-							</span>
-						</li>
-					))}
+					{misc.map((post: any) => {
+						switch (post.data.type) {
+							case "text":
+								return (
+						   <li>
+							   <span class="post-title">
+								   <a href={`/logbook/${post.id}`}>{post.data.title}</a>
+							   </span>
+
+							   <span class="published-date">
+								   {post.data.published_date.toLocaleString("en-CA", {
+								   	year: "numeric",
+								   	month: "long",
+								   	day: "numeric"
+								   })}
+							   </span>
+
+							   <span class="post-description">
+								   {post.data.description}
+							   </span>
+						   </li>
+					   )
+							case "artwork":
+								return (
+						   <li>
+							   <a href={`/logbook/${post.id}`}>
+								   <img class="post-artwork" src={post.data.image.src} alt={post.data.alt} />
+							   </a>
+						   </li>
+					   )
+						}
+					})}
 				</ul>
 			</section>
 			<section class="posts">
@@ -71,20 +89,38 @@ const misc = entries.filter((entry) => !entry.data.collection).sort(sortDate)
 						<h3>{collectionName}</h3>
 
 						<ul class="post-list">
-							{entries.map((entry: any) => (
-								<li>
-									<span class="post-title">
-										<a href={`/logbook/${entry.id}`}>{entry.data.title}</a>
-									</span>
-									<span class="published-date">
-										{entry.data.published_date.toLocaleString("en-CA", {
-											year: "numeric",
-											month: "long",
-											day: "numeric"
-										})}
-									</span>
-								</li>
-							))}
+							{entries.map((post: any) => {
+								switch (post.data.type) {
+									case "text":
+										return (
+								   <li>
+									   <span class="post-title">
+										   <a href={`/logbook/${post.id}`}>{post.data.title}</a>
+									   </span>
+
+									   <span class="published-date">
+										   {post.data.published_date.toLocaleString("en-CA", {
+										   	year: "numeric",
+										   	month: "long",
+										   	day: "numeric"
+										   })}
+									   </span>
+
+									   <span class="post-description">
+										   {post.data.description}
+									   </span>
+								   </li>
+							   )
+									case "artwork":
+										return (
+								   <li>
+									   <a href={`/logbook/${post.id}`}>
+										   <img class="post-artwork" src={post.data.image.src} />
+									   </a>
+								   </li>
+							   )
+								}
+							})}
 						</ul>
 					</>
 				))}

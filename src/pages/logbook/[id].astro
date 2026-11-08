@@ -36,7 +36,7 @@ const { Content } = await render(post)
 				<div class="title">
 					<div class="heading">
 						<h1>{post.data.title}</h1>
-						<p class="description">[{post.data.description}]</p>
+						{post.data.description != null ? <p class="description">[{post.data.description}]</p> : ""}
 					</div>
 					<div class="published-date-meta">
 						<span>Published</span>
@@ -60,6 +60,7 @@ const { Content } = await render(post)
 					</div>
 				</div>
 			</header>
+			{post.data.type === "artwork" ? <img id="artwork" src={post.data.image.src} alt={post.data.alt} /> : ""}
 			<article>
 				<Content />
 			</article>
