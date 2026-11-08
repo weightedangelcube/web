@@ -57,8 +57,9 @@ export default function LBNowPlaying() {
 		const fetchData = async () => {
 			const rawData = await fetchListenData()
 			if (!rawData) return
-			const rid = await labsLookup(rawData.track_name, rawData.artist_name)
-			const trackData = rid ? await mbLookup(rid) : undefined
+			const trackData = await mbLookup(
+				`${rawData.track_name} ${rawData.artist_name} ${rawData.release_name || ""}`
+			)
 			if (!trackData) {
 				setSong(lbToSong(rawData))
 			} else {
@@ -106,17 +107,12 @@ async function fetchListenData(): Promise<LBTrack | undefined> {
 	return res?.payload?.listens?.[0]?.track_metadata
 }
 
-async function labsLookup(name: string, artist: string) {
-	const params = new URLSearchParams({ query: `${name} - ${artist}` })
-	const res = await getJSON<any[]>(`https://labs.api.listenbrainz.org/recording-search/json?${params}`)
-	return res?.[0]?.recording_mbid
-}
-
-async function mbLookup(rid: string) {
+async function mbLookup(query: string) {
 	const params = new URLSearchParams({
 		fmt: "json",
 		limit: "1",
-		query: `rid:${rid}`
+		query,
+		dismax: "true"
 	})
 	const res = await getJSON<{ recordings?: MBRecording[] }>(`https://musicbrainz.org/ws/2/recording/?${params}`)
 	return res?.recordings?.[0]
